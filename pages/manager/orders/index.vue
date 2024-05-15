@@ -2,7 +2,7 @@
   <main>
     <fixedLeftColumn>
       <template #fixed>
-        <div class="block">
+        <div class="block block_back">
           <Button class="back-button" color="gray" @click="routerBack">Назад</Button>
         </div>
         <div class="block">
@@ -362,6 +362,11 @@ const onClearYear = () => {
 .block {
   padding: 16px;
   margin: 15px;
+  &_back {
+    @include start-at(lg) {
+      display: none;
+    }
+  }
 }
 
 .block > *:not(:last-child) {
