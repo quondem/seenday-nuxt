@@ -1,0 +1,36 @@
+.input-phone {
+  display: flex;
+  gap: 10px;
+
+  @include active-by(sm) {
+    flex-direction: column;
+  }
+
+  &__phone-container {
+    flex: 1;
+
+    display: flex;
+    gap: 10px;
+  }
+
+  &__phone {
+    flex: 1;
+    cursor: text;
+  }
+
+  &__country-select {
+    width: 80px;
+  }
+
+  &__country-select-icon {
+    font-size: 30px;
+  }
+
+  &__ext {
+    width: 90px;
+
+    @include active-by(sm) {
+      width: 100%;
+    }
+  }
+}

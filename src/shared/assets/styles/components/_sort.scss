@@ -1,0 +1,377 @@
+//сортировка в странице "МОИ ЗАКАЗЫ 
+.sort {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    // padding-bottom: 15px*$rem;
+    padding-bottom: 0;
+    align-self: flex-start;
+
+    @include start-at("xslg") {
+        flex-direction: column; 
+        padding-bottom: 0;
+    }
+
+    color: var(--color_sort);
+
+    &__icons {
+        justify-content: left;
+        flex-direction: row;
+        gap: 0.1875rem;
+    }
+
+    &__subs {
+        justify-content: left;
+        flex-direction: row;
+        gap: 0.1875rem;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px*$rem 0;
+        margin-bottom: 15px*$rem;
+
+        font-size: 17px*$rem;
+        text-align: center;
+
+        background-color: var(--bg_sort_title);
+        border-top-left-radius: $block-border-radius;
+        border-top-right-radius: $block-border-radius;
+        color: inherit;
+
+        @include start-at("xslg") {
+            margin-bottom: 0;
+            padding: 10px*$rem 20px*$rem;
+        }
+
+        @include start-at("lg") {
+            padding: 10px*$rem 35px*$rem;
+        }
+        
+    }
+
+    &__text-mobile {
+        font-size: 17px*$rem;
+        font-family: $font-family-bold;
+
+        @include start-at("xslg") {
+            display: none;
+        }
+    }
+
+    &__text {
+        display: none;
+        margin-left: 5px*$rem;
+
+        @include start-at("xslg") {
+            display: block;
+        }
+    }
+
+    &__icon {
+        display: none;
+
+        font-size: 17px*$rem;
+
+        color: inherit;
+
+        @include start-at("xslg") {
+            display: block;
+        }
+    }
+
+    /*
+    &__sub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 10px*$rem;
+        // margin-right: 10px;      
+
+        font-size: 12px*$tem;
+
+        background-color: var(--bg_sort_sub);
+        border-radius: $border-radius;
+        color: var(--color_sort_sub);
+
+        cursor: pointer;
+        white-space: nowrap;
+
+        &.small {
+            font-size: 14px;
+        }
+
+        &.path {
+            flex: 1;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include start-at("xslg") {
+                flex: 0;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            @include start-at("xslg") {
+                // margin-bottom: 4px;
+                // margin-right: 4px;
+            }
+            // @include start-at("lg") {
+            //     width: 100%;
+            //     margin-top: 0;
+            // }
+            
+            // @include start-at("xl") {
+            //     margin-top: 4px;
+            //     width: 49.4%;
+            // }
+        }
+
+
+        &[data-active="active"] {
+            background-color: var(--bg_sort_order);
+            box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+        }
+
+        @include start-at("xslg") {
+            margin-right: 5px;
+            padding: 0 10px*$rem;
+        }
+
+        @include start-at("lg") {
+            justify-content: center;
+            margin-right: 0;
+            margin-bottom: 5px*$rem;  
+        }
+
+        @include start-at("xl") {
+            margin-bottom: 0;
+        }
+    
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        transition: 0.3s ease;
+
+        &:hover,
+        [data-active="active"] {
+            background-color: var(--bg_sort_order);
+            // box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+
+            &[data-color="purple"] {
+            }
+        }
+        
+    }
+    */
+
+    &__icon-sub, &__sub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 10px*$rem;
+        // margin-right: 10px;      
+
+        font-size: 12px*$tem;
+
+        background-color: var(--bg_sort_sub);
+        border-radius: $border-radius;
+        color: var(--color_sort_sub);
+
+        cursor: pointer;
+        white-space: nowrap;
+
+        &[data-color="purple"] {
+            background-color: var(--bg_btn_primary);
+            color: var(--color_white);
+        }
+
+        &.small {
+            font-size: 14px;
+        }
+
+        &.path {
+            flex: 1;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include start-at("xslg") {
+                flex: 0;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+        }
+
+        @include start-at("xslg") {
+            margin-right: 5px;
+            padding: 0 10px*$rem;
+        }
+
+        @include start-at("lg") {
+            justify-content: center;
+            margin-right: 0;
+            margin-bottom: 5px*$rem;  
+        }
+
+        @include start-at("xl") {
+            margin-bottom: 0;
+        }
+    
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: var(--bg_sort_order);
+            box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+        }
+
+        &[data-active="active"] {
+            background-color: var(--color_orange);
+            box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+        }
+    }
+
+    // &__icon-sub {
+    //     display: none;
+
+    //     font-size: 15px*$rem; 
+
+    //     transition: color 0.3s ease;
+
+    //     @include start-at("xslg") {     
+    //         display: flex;
+    //         align-items: center; 
+    //     }
+    // }
+
+    &__title-sub { 
+        display: block;
+
+        font-size: 14px*$rem;
+
+        transition: color 0.3s ease;
+
+        @include start-at("xslg") { margin-left: 5px*$rem; }
+     }
+
+}
+
+sort-wrapper {
+    display: block;
+    overflow-x: visible;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &[data-type="gallery"] {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+
+        &[data-show="1"] {
+            display: flex !important;
+        }
+
+        @include start-at("md") {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        & .sort-btn {
+            min-width: inherit;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+
+            overflow-x: auto;
+        }
+
+        & sort-btn-item {
+            white-space: nowrap;
+            height: 100%;
+        }
+
+        & .sort-btn {
+            margin-top: 10px;
+            padding-bottom: 10px;
+            
+            @include start-at("md") {
+                margin-top: 0;
+            }
+        }
+
+        & .toggle-type-gallery {
+            order: -1;
+            margin-left: auto;
+            height: 32px;
+            
+            @include start-at("md") {
+                order: 0;
+                margin-bottom: 0;
+                width: auto;
+                margin-left: 12px;
+            }
+        }
+
+        &.flex {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            & .toggle-type-gallery {
+                width: auto;
+                flex-grow: 0;
+                margin-left: 12px;
+                order: 0;
+            }
+
+            & .sort-btn {
+                width: auto;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+.sort-btn {
+    position: relative;
+
+    display: flex;
+    min-width: 543px;
+
+    &__item {
+        display: block;
+        margin-right: 5px*$rem;
+
+        &--desktop {
+            display: none;
+
+            @include start-at("xslg") {
+                display: block;
+            }
+        }
+    }
+}

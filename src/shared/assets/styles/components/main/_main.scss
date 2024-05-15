@@ -1,0 +1,87 @@
+.main {
+  grid-area: main;
+
+  display: grid;
+  grid-gap: $grid-gap-blocks;
+  //ширина левой колонки формируется по минимальному контенту
+  grid-template-columns: [col1-start] 1fr [col2-end];
+  grid-template-rows: [row1-start] min-content [row1-end row2-start] 1fr [row2-end];
+  align-self: flex-start;
+
+  &_center {
+    align-self: center;
+  }
+
+  @include start-at("xslg") {
+    grid-template-columns: [col1-start] auto [col1-end col2-start] 1fr [col2-end];
+    grid-template-rows: [row1-start] min-content [row1-end row2-start] min-content [row2-end];
+  }
+
+  &_sticky &__fixed {
+    @include start-at(lg) {
+      position: sticky;
+      top: calc(16px + $heightTop);
+    }
+  }
+
+  //Если мы хотим, чтобы наша левая колонка в мейне была фиксированной ширины
+  &_fixed {
+    @include start-at("xslg") {
+      grid-template-columns: [col1-start] 1fr [col1-end];
+      grid-template-rows: [row1-start] min-content [row1-end row2-start] min-content [row2-end];
+    }
+
+    @include start-at("lg") {
+      grid-template-columns: [col1-start] 30% [col1-end col2-start] 1fr [col2-end];
+
+      &.assistants {
+        grid-template-columns: [col1-start] 1fr [col1-end];
+      }
+
+      &.statement {
+        grid-template-columns: [col1-start] 235px * $rem [col2-start] 1fr [col2-end];
+      }
+
+      &.disc {
+        grid-template-columns: [col1-start] 235px * $rem [col2-start] 1fr [col2-end];
+      }
+    }
+
+    @include start-at("xl") {
+      grid-template-columns: [col1-start] 345px * $rem [col1-end col2-start] 1fr [col2-end];
+
+      &.small {
+        grid-template-columns: [col1-start] 235px * $rem [col1-end col2-start] 1fr [col2-end];
+      }
+    }
+  }
+
+  &.reverse {
+    @include start-at("xslg") {
+      grid-template-columns: [col1-start] 1fr [col1-end];
+      grid-template-rows: [row1-start] min-content [row1-end row2-start] min-content [row2-end];
+    }
+
+    @include start-at("lg") {
+      grid-template-columns: [col1-start] 1fr [col1-end col2-start] 30% [col2-end];
+    }
+
+    @include start-at("xl") {
+      grid-template-columns: [col1-start] 1fr [col1-end col2-start] 345px * $rem [col2-end];
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  align-self: flex-start;
+  grid-column: 1 / span 2;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: $padding-topbar;
+
+  @include start-at("md") {
+    padding-left: $padding-topbar;
+    padding-right: $padding-topbar;
+  }
+}

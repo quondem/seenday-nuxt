@@ -1,0 +1,124 @@
+.errors-403 {
+  background-position: left -50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../../images/errors/errors-bg-mobile.svg);
+
+  @include start-at("md") {
+    background-position: center;
+    background-image: url(../../../images/errors/errors-bg.svg);
+  }
+
+  @media screen and (max-height: 600px) and (min-width: 400px) {
+    background-position: left bottom;
+    background-image: url(../../../images/errors/errors-bg.svg);
+  }
+
+  @media screen and (max-width: 1199px) and (min-height: 900px) {
+    padding-left: 5%;
+  }
+
+  @include start-at("lg") {
+    padding-top: 8%;
+  }
+
+  &__container {
+    @include start-at("lg") {
+      padding-left: 10%;
+    }
+
+    @include start-at("xl") {
+      padding-left: 15%;
+    }
+
+    @include start-at("xxl") {
+      padding-left: 0;
+    }
+  }
+
+
+  & .errors-page__number {
+    @media screen and (max-height: 600px) and (min-width: 400px) {
+      justify-content: flex-start;
+    }
+
+    @include start-at("xslg") {
+      justify-content: flex-start;
+    }
+  }
+
+  & .errors-page__number-img {
+    @include active-by("md") {
+      left: auto;
+      right: 10px;
+      transform: translateX(0);
+    }
+
+    @include start-at("lg") {
+      top: calc(100% + 30px);
+      right: 5px;
+      left: auto;
+
+      transform: translateX(0);
+    }
+
+    @include start-at("xxl") {
+      top: calc(100% + 40px);
+      right: 30px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-35%);
+
+    @include start-at("md") {
+      transform: translateX(0);
+      left: 55%;
+    }
+
+    @include start-at("xslg") {
+      left: 55%;
+      transform: translateX(-20%);
+    }
+
+    @include start-at("xl") {
+      transform: translateX(0);
+    }
+
+
+    @media screen and (max-height: 700px) and (min-width: 400px) {
+      transform: translateX(0);
+      left: 55%;
+      bottom: 0;
+    }
+
+    img {
+      height: 50vh;
+      width: auto;
+
+      @include start-at("sm") {
+        height: 50vh;
+      }
+
+      @include start-at("xl") {
+        height: 70vh;
+      }
+
+      @include start-at("xxl") {
+        height: 75vh;
+      }
+
+      @media screen and (max-height: 600px) and (min-width: 400px) {
+        height: 70vh;
+      }
+    }
+  }
+}

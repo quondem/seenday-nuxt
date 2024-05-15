@@ -1,0 +1,267 @@
+.textarea {
+  position: relative;
+  background-color: var(--color_white);
+
+  box-shadow: var(--box_shadow_block);
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+
+  outline: none;
+  cursor: text;
+
+  color: var(--color_text);
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &.error:focus-within {
+    border: 1px solid;
+    border-color: var(--color_danger);
+    background-color: transparent;
+  }
+
+  &.error {
+    background-color: rgba(224, 31, 25, 0.12);
+    box-shadow: none;
+  }
+
+  &_focused:not(&_disabled):not(&_readonly),
+  &:focus-within:not(&_disabled):not(&_readonly) {
+    border: 1px solid;
+    border-color: var(--border_focus_input);
+    box-shadow: none;
+
+    & .textarea__label {
+      transform: translateY(-8px);
+      font-size: 12px;
+      opacity: 1;
+    }
+
+    & .textarea__input::placeholder {
+      opacity: 0.6;
+    }
+  }
+
+  &.fill {
+    & .textarea__label {
+      transform: translateY(-8px);
+      font-size: 12px;
+      opacity: 1;
+    }
+
+    & .textarea__input::placeholder {
+      opacity: 0.6;
+    }
+  }
+
+  &_disabled {
+    background: #f3f3f3;
+    color: var(--color_other);
+    opacity: 1 !important;
+
+    cursor: default;
+  }
+
+  &_fill {
+    height: 100%;
+    padding: 4px 10px;
+  }
+
+  &_readonly {
+    cursor: unset;
+  }
+
+  &_solid {
+    background-color: var(--background_input_solid);
+    color: var(--color_input_solid);
+    box-shadow: none;
+  }
+
+  &_disabled.textarea_solid {
+    background-color: var(--background_input_solid_disabled);
+    color: var(--color_input_solid_disabled);
+  }
+
+  &_small {
+    min-height: 80px;
+  }
+
+  &_medium {
+    min-height: 110px;
+  }
+
+  &_large {
+    min-height: 150px;
+  }
+
+  &__check {
+    font-size: 16px;
+    color: var(--color_success);
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+  }
+
+  &__inner {
+    flex: 1;
+    position: relative;
+  }
+
+  &__scrollarea-container {
+    margin: 10px 0;
+    height: 100%;
+
+    flex: 1;
+  }
+
+  &_with-expand &__scrollarea-container {
+    margin-bottom: 20px;
+  }
+
+  &__scrollarea {
+    max-height: 250px;
+  }
+
+  &_with-label &__scrollarea-container {
+    padding-top: 12px;
+  }
+
+  &__scrollarea-inner {
+    position: relative;
+
+    font-size: 14px;
+    font-family: $font-base;
+    line-height: 15.4px;
+    text-indent: 0;
+  }
+
+  &__label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-family: $font-family-base;
+
+    display: block;
+    margin: 5px 0;
+
+    transform: translateY(0);
+
+    letter-spacing: normal;
+    font-size: 16px;
+    opacity: 0.6;
+
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    transform-origin: 0 0;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    will-change: color;
+
+    width: 100%;
+
+    padding: 0px 10px;
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: rgba(0, 0, 0, 0.8);
+
+    width: 100%;
+    min-height: $heightInput;
+    height: 100%;
+
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    overflow: clip;
+
+    padding: 0 10.5px;
+
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    font-family: inherit;
+  }
+
+  &__input::placeholder {
+    font-family: $font-family-base;
+    font-size: 16px;
+    letter-spacing: normal;
+    line-height: 15.4px;
+    transition: opacity 0.2s ease;
+    color: inherit;
+  }
+
+  &__caret {
+    display: inline-block;
+    height: 1rem;
+    width: 0;
+  }
+
+  &_with-label &__input::placeholder {
+    opacity: 0;
+  }
+
+  &_disabled.textarea_solid &__input,
+  &_disabled.textarea_solid &__input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 0.6;
+  }
+
+  &__pseudocontent {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+    color: transparent;
+    overflow: hidden;
+
+    padding-left: 10.5px;
+    padding-right: 10.5px;
+  }
+
+  &__input:placeholder-shown ~ div {
+    font-size: 16px;
+  }
+
+  &__right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    height: fit-content;
+
+    color: inherit;
+    margin: 20px 12px;
+  }
+
+  &__right-section:empty {
+    display: none;
+  }
+
+  &__hint {
+    color: inherit;
+  }
+
+  &__expand {
+    position: absolute;
+    bottom: -10px;
+
+    left: 0;
+    right: 0;
+
+    width: fit-content;
+    margin: 0 auto;
+  }
+}

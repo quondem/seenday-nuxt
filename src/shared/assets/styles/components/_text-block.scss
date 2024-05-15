@@ -1,0 +1,92 @@
+.text-block {
+    font-size: 16px*$rem;
+    font-family: $font-family-base;
+    line-height: 1.2;
+
+    color: var(--color_text_block);
+
+    &__bold {
+        font-family: $font-family-medium;
+
+        &.yellow {
+            color: var(--color_text_block_yellow);
+        }
+
+        &.gray {
+            color: var(--color_text_block_disabled);
+        }
+
+        &.green {
+            color: var(--color_success);
+        }
+
+        &.purple {
+            color: var(--color_text_block_in_work);
+        }
+
+        &.orange {
+            color: var(--color_orange);
+        }
+
+        &.blue {
+            color: var(--bg_filter_color_delivered);
+        }
+
+        &.light-blue {
+            color: var(--bg_filter_color_payable);
+        }
+        &.red {
+            color: var(--color_red);
+        }
+
+        &[data-color="yellow"] {
+            color: var(--color_text_block_yellow);
+        }
+        &[data-color="gray"] {
+            color: var(--color_text_block_disabled);
+        }
+        &[data-color="green"] {
+            color: var(--color_green);
+        }
+        &[data-color="purple"] {
+            color: var(--color_text_block_in_work);
+        }
+        &[data-color="blue"] {
+            color: var(--bg_filter_color_delivered);
+        }
+        &[data-color="light-blue"] {
+            color: var(--bg_filter_color_payable);
+        }
+        &[data-color="red"] {
+            color: var(--color_red);
+        }
+        &[data-color="orange"] {
+            color: var(--color_orange);
+        }
+    }
+
+    &[data-color="yellow"] {
+        color: var(--color_text_block_yellow);
+    }
+    &[data-color="gray"] {
+        color: var(--color_text_block_disabled);
+    }
+    &[data-color="green"] {
+        color: var(--color_green);
+    }
+    &[data-color="purple"] {
+        color: var(--color_text_block_in_work);
+    }
+    &[data-color="blue"] {
+        color: var(--bg_filter_color_delivered);
+    }
+    &[data-color="light-blue"] {
+        color: var(--bg_filter_color_payable);
+    }
+    &[data-color="red"] {
+        color: var(--color_red);
+    }
+    &[data-color="orange"] {
+        color: var(--color_orange);
+    }
+}

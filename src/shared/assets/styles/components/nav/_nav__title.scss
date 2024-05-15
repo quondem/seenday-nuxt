@@ -1,0 +1,39 @@
+
+// Основные стили для основного меню
+.nav {
+    // Текст в меню
+    &__title {
+        font-family: $font-family-light;
+        font-size: $font-size-nav;
+
+        color: var(--color_nav_title);
+        white-space: nowrap;
+
+        @include start-at("xslg") {
+            display: none;
+
+            font-size: $font-size-nav;
+
+            &.js-change-width {
+                display: block;
+            }
+        }
+
+        @include start-at("xl") {
+            display: block;
+
+            &.js-change-width {
+                display: none;
+            }
+        }
+
+        // стили для sub-menu
+        &_sm {
+            font-size: $font-size-sub;
+
+            &.pdl {
+                padding-left: calc($width-nav-icon / 2);
+            }
+        }
+    }
+}

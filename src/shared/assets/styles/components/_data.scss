@@ -1,0 +1,323 @@
+// страница занимает две колонки
+.page-data {
+    width: 100%;
+    grid-column: 1 / span 2;
+}
+
+// Шапка данных
+.header-data {
+    padding: 9px 0 10px;
+    margin-bottom: 15px;
+
+    @include start-at("xslg") {
+        margin-bottom: 15px; 
+    }
+
+    // дата последних изменений
+    &__date-change {
+        width: 100%;
+
+        color: var(--color_header_data_date_change);
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    // Блок для блоков названия и статуса
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        margin-top: 15px;
+
+        @include start-at("md") {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    // блок со статусом
+    &__status-block {
+        display: flex;
+        align-items: center
+    }
+
+    &__status-name {
+        display: block;
+        margin-right: 5px;
+
+        font-family: $font-family-medium; 
+    }
+
+    // блок с выпадающим списком
+    &__select-filter {
+        width: 100px*$rem;
+
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &__name {
+        position: relative;
+
+        margin-bottom: 10px;
+        
+        @include start-at("md") {
+            margin-bottom: 0;
+            font-size: 20px;  
+        }
+    }
+
+    &__name-page {
+        position: relative;
+        
+        font-size: 18px;
+        font-family: $font-family-medium;
+
+        @include start-at("md") {
+            font-size: 20px;  
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: -35px;
+
+            display: block;
+
+            transform: translateY(-50%);
+
+            font-size: 16px;
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 800;
+            
+            cursor: pointer;
+            content: '\f304';
+
+            opacity: 1;
+            
+            transition: all 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+
+    }
+}
+
+// навигационная панель по настройкам страницы
+.control-panel {
+    width: 100%;
+
+    // список всех пунктов
+    &__list {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid #d6d6d6;
+    }
+
+    // блок с пунктом
+    &__item {
+        flex: 1;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+        
+        text-align: center;
+
+        list-style: none;
+
+        @include start-at("md") {
+            margin-bottom: 0;
+        }
+
+        @include start-at("xslg") {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+
+        padding-bottom: 8px;
+        display: inline-flex;
+
+        font-size: 14px*$tem;
+        white-space: nowrap;
+        font-family: $font-family-medium;
+
+        color: var(--color_other);
+
+        @include start-at("md") {
+            padding-bottom: 10px;
+        }
+
+        @include start-at("xslg") {
+            padding-bottom: 20px;
+        }
+
+        &::before {
+            position: absolute;
+            top: calc(100% - 2px);
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background-color:  var(--bg_before_control_panel_link);
+            opacity: 0;
+
+            transition: all 0.3s ease;
+
+            content: '';
+        }
+
+        &:hover::before {
+            @include start-at("xl") {
+                opacity: 1; 
+            }
+        }
+
+        &.active::before {
+            opacity: 1;
+        }
+    }
+}
+
+.content-data {
+    margin-top: 15px*$rem;
+
+     @include start-at("xslg") {
+        margin-top: 25px*$rem;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+
+        font-family: $font-medium;
+        font-size: 20px;
+
+        @include start-at("md") {
+            font-size: 22px;
+        }
+
+        @include start-at("xslg") {
+            margin-bottom: 25px;
+            font-size: 23px;
+        }
+    }
+
+    &__list-orders {
+        margin-top: 40px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.content-data-type {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px*$rem;
+
+    @include start-at("md") {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include start-at("xslg") {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
+    }
+}
+
+// Блок с данными
+.block-data {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px 8px 15px;
+        border-bottom: 1px solid var(--border_block_data_header);
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        background-color: var(--bg_block_data_header);
+        color: var(--color_block_data_header);
+
+        @include start-at("md") {
+            flex-direction: row;
+            padding: 8px 10px 8px 20px;
+        }
+    }
+
+    &__name {
+        width: 100%;
+        padding-right: 35px;
+
+        font-size: 16px*$tem;
+    
+        @include start-at("xslg") {
+            padding-right: 50px;
+        }
+    }
+
+    &__body {
+        padding: 15px 10px 15px 15px;
+
+        @include start-at("md") {
+            padding: 15px 10px 15px 20px;
+        }
+    }
+}
+
+.data-item {
+    margin-bottom: 8px*$rem;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    &__name {
+        margin-right: 8px*$rem;
+
+        font-size: 16px;
+        font-weight: 800;
+    }   
+    
+    &__event {
+        padding-left: 10px;
+
+        font-size: 18px;
+
+        cursor: pointer;
+        opacity: 1;
+
+        transition: all 0.3s ease;
+
+
+        @include start-at("xl") {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.change-client {
+    white-space: nowrap;
+}

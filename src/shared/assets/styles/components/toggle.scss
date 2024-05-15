@@ -1,0 +1,45 @@
+.toggle {
+  height: 30px;
+  padding: 6px 10px;
+
+  border: none;
+
+  font-size: 14px;
+  font-family: $font-base;
+
+  background-color: var(--bg_sort_sub);
+  border-radius: $border-radius;
+  color: var(--color_sort_sub);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  &[data-color="purple"] {
+    background-color: var(--bg_btn_primary);
+    color: var(--color_white);
+  }
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--bg_sort_order);
+    color: #ffffff;
+  }
+
+  &[data-state="on"],
+  &[data-state="checked"],
+  &[data-state="active"] {
+    background-color: var(--color_orange);
+    color: #ffffff;
+  }
+
+  &_width_full {
+    width: 100%;
+  }
+
+  &_width_full-lg {
+    @include active-by("lg") {
+      width: 100%;
+    }
+  }
+}

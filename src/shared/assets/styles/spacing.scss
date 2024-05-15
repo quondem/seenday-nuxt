@@ -1,0 +1,122 @@
+.ml-4 {
+  margin-left: 4px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.m-b {
+  margin-bottom: 15px * $rem;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.base-margin-right {
+  margin-right: 15px * $rem !important;
+}
+
+.base-half-margin-right {
+  margin-right: 7.5px * $rem !important;
+}
+
+.small-margin-right {
+  margin-right: 5px * $rem !important;
+}
+
+.base-margin-top {
+  margin-top: 15px * $rem !important;
+}
+
+.base-half-margin-top {
+  margin-top: 7.5px * $rem !important;
+}
+
+.small-margin-top {
+  margin-top: 5px * $rem !important;
+}
+
+.base-margin-left {
+  margin-left: 15px * $rem !important;
+}
+
+.base-half-margin-left {
+  margin-left: 7.5px * $rem !important;
+}
+
+.small-margin-left {
+  margin-left: 5px * $rem !important;
+}
+
+.base-margin-bottom {
+  margin-bottom: 15px * $rem !important;
+}
+
+.base-half-margin-bottom {
+  margin-bottom: 7.5px * $rem !important;
+}
+
+.small-margin-bottom {
+  margin-bottom: 5px * $rem !important;
+}
+
+.small-margin-gor {
+  margin-right: 5px * $rem !important;
+  margin-left: 5px * $rem !important;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.default-inner-gap {
+  padding: 16px;
+
+  @include start-at("xslg") {
+    padding: 24px;
+  }
+}
+
+.inner-gap {
+  padding: $inner-gap;
+}
+
+.gap-5 {
+  gap: 5px * $rem;
+}
+
+.base-gap,
+.gap-base {
+  gap: 15px * $rem;
+}
+
+.base-half-gap,
+.gap-base-half {
+  gap: 7.5px * $rem;
+}

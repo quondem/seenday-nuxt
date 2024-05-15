@@ -1,0 +1,384 @@
+//стили для блоков в левой колонке
+.add-card {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  color: var(--color_add_card);
+
+  &_new {
+    & .add-card__sub {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &.error {
+        background-color: var(--bg_add_card_new_error);
+        border-radius: 3px;
+      }
+
+      &:not(.add-card__sub_column) {
+        margin-bottom: 3px;
+
+        @include start-at("md") {
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: 7.5px 10px;
+        }
+
+        & .add-card__label {
+          @include start-at("md") {
+            width: 33%;
+            margin-bottom: 0;
+          }
+        }
+
+        & .add-card__input {
+          @include start-at("md") {
+            width: 55%;
+          }
+        }
+      }
+    }
+
+    & .add-card__body {
+      padding: 15px 10px;
+
+      @include start-at("md") {
+        padding: 15px;
+      }
+    }
+
+    & .add-card__input {
+      width: 100%;
+      text-align: left;
+      padding-left: 15px;
+    }
+
+    & .add-card__label {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+
+  &_fixed {
+    @include start-at(lg) {
+      position: sticky;
+      top: 16px;
+    }
+  }
+
+  &_alb-new {
+    & .add-card__input {
+      width: 100%;
+
+      @include start-at("md") {
+        width: 67%;
+      }
+    }
+
+    & .add-card__sub {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    & .add-card__label {
+      @include start-at("md") {
+        margin-top: 12px * $rem;
+      }
+    }
+  }
+
+  &__btn-pay {
+    margin-top: 10px * $rem;
+  }
+
+  // Блок с выбором типа галереи
+  &__gallery {
+    display: inline-flex;
+    gap: 10px * $rem;
+    flex-wrap: wrap;
+
+    @include start-at("xl") {
+      flex-wrap: nowrap;
+    }
+
+    &-item {
+      padding: 10px * $rem;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      border-radius: 5px * $rem;
+
+      @include start-at("sm") {
+        flex-grow: 0;
+      }
+    }
+
+    &-title {
+      display: inline-flex;
+      gap: 10px * $rem;
+      align-items: center;
+
+      font-size: 16px * $tem;
+
+      & i {
+        font-size: 30px * $tem;
+      }
+    }
+
+    &-desc {
+      margin-top: 3px * $rem;
+      margin-bottom: 7.5px;
+
+      font-size: 12px * $tem;
+      opacity: 0.7;
+    }
+
+    & .sort__subs {
+      margin-top: auto !important;
+      width: 100%;
+    }
+
+    & sort-sub {
+      width: 100%;
+    }
+  }
+
+  //блок остается на месте  при скролле. нужно задать фикс. ширину, чтобы не расстягивался на всю ширину
+  &[data-fixed="fixed"] {
+    @include start-at("xslg") {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    @include start-at("lg") {
+      position: fixed;
+      width: 27.5%;
+    }
+
+    @include start-at("xl") {
+      width: 345px * $rem;
+    }
+  }
+
+  // Заголовок в блоке
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin-top: -1px;
+    margin-right: -1px;
+    margin-left: -1px;
+
+    width: auto;
+    padding: 8px * $rem 15px * $rem;
+
+    font-size: 16px * $tem;
+    text-align: center;
+
+    background-color: var(--bg_add_card_title);
+    border-top-left-radius: $block-border-radius;
+    border-top-right-radius: $block-border-radius;
+    color: inherit;
+  }
+
+  &__one-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px * $rem 0;
+
+    font-size: 16px * $tem;
+    text-align: center;
+
+    background-color: var(--bg_add_card_title);
+    border-radius: $block-border-radius;
+    color: inherit;
+  }
+
+  //Внутренние отступы только для карточек на страницах Мои фотосессии, мои альбомы, мои проекты
+  &__body {
+    padding: $inner-gap $inner-gap * 1.5;
+
+    @include start-at("xslg") {
+      padding-top: $inner-gap * 1.5;
+    }
+  }
+
+  &__body-item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include start-at("xslg") {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    &_border {
+      border-top: 1px solid #e7e8ec;
+      padding-top: 10px;
+    }
+  }
+
+  &__body-error {
+    width: 100%;
+
+    & .notice {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__body-inner {
+    @include start-at("md") {
+      width: 50%;
+    }
+
+    &_fix {
+      @include start-at("md") {
+        width: 225px;
+      }
+    }
+
+    &_grow {
+      flex-grow: 1;
+      width: auto;
+    }
+
+    & .wrapper-date {
+      width: 100%;
+    }
+  }
+
+  &__body-btns {
+    display: grid;
+    grid-gap: calc($grid-gap / 2);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    @include start-at("xslg") {
+      grid-gap: 0;
+
+      & > .button {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  //Внутренние оступы для карточек в левой колонке
+  &__inner {
+    padding: $inner-gap;
+  }
+
+  &__text {
+    margin-bottom: 15px * $rem;
+
+    font-size: 13px * $tem;
+    line-height: 1.2;
+
+    color: var(--bg_add_card_text);
+  }
+
+  //обертка для инпута и label  только для карточек на страницах Мои фотосессии, мои альбомы, мои проекты
+  &__sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px * $rem;
+
+    color: var(--bg_add_card_sub);
+
+    &_column {
+      flex-direction: column;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-top: 15px * $rem;
+
+    &_mobile {
+      @include start-at("xslg") {
+        display: none;
+      }
+    }
+
+    &_desktop {
+      display: none;
+      @include start-at("xslg") {
+        display: block;
+      }
+    }
+  }
+
+  &__input {
+    width: 40%;
+
+    @include start-at("xslg") {
+      width: 50%;
+    }
+
+    &.short {
+      width: 100%;
+
+      @include start-at("md") {
+        width: 170px;
+      }
+    }
+
+    &.sale {
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+
+      @include start-at("md") {
+        width: 60px;
+      }
+    }
+
+    &:focus {
+      border-color: var(--color_secondary);
+      outline: none;
+    }
+  }
+
+  &__label {
+    width: 55%;
+
+    @include start-at("xslg") {
+      width: 45%;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background: var(--color-line-light-gray);
+  }
+}

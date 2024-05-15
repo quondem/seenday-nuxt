@@ -1,0 +1,109 @@
+// global settings
+.tippy-tooltip {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 3px;
+    word-break: break-word;
+}
+
+// default theme
+.tippy-tooltip.default-local-theme {
+    color: #fff;
+    background-color: #343360;
+    border-radius: 8px;
+}
+
+.tippy-tooltip.default-local-theme[x-placement^="top"] .tippy-arrow {
+    border-top: 8px solid #343360;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.tippy-tooltip.default-local-theme[x-placement^="bottom"] .tippy-arrow {
+    border-bottom: 8px solid #343360;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+.tippy-tooltip.default-local-theme[x-placement^="left"] .tippy-arrow {
+    border-left: 8px solid #343360;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tippy-tooltip.default-local-theme[x-placement^="right"] .tippy-arrow {
+    border-right: 8px solid #343360;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tippy-tooltip.default-local-theme .tippy-backdrop {
+    background-color: #343360;
+}
+
+.tippy-tooltip.default-local-theme .tippy-roundarrow {
+    fill: #343360;
+}
+
+.tippy-tooltip.default-local-theme[data-animatefill] {
+    background-color: initial;
+}
+
+// light theme
+.tippy-tooltip.light-local-theme,
+.tippy-tooltip.light-no-padding-local-theme {
+    padding: 20px;
+    
+    color: #051836;
+    filter: drop-shadow(0px 2px 30px rgba(5, 24, 54, 0.16));
+    background-color: #fff;
+    border-radius: 3px;
+
+    &[x-placement^="top"] {
+        .tippy-arrow {
+            border-top: 8px solid #fff;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+        }
+    }
+
+    &[x-placement^="bottom"] {
+        .tippy-arrow {
+            border-bottom: 8px solid #fff;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+        }
+    }
+
+    &[x-placement^="left"] {
+        .tippy-arrow {
+            border-left: 8px solid #fff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+    }
+
+    &[x-placement^="right"] {
+        .tippy-arrow {
+            border-right: 8px solid #fff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+    }
+
+    .tippy-backdrop {
+        background-color: #fff;
+    }
+
+    .tippy-roundarrow {
+        fill: #fff;
+    }
+
+    &[data-animatefill] {
+        background-color: initial;
+    }
+}
+
+.tippy-tooltip.light-no-padding-local-theme {
+    padding: 0;
+}

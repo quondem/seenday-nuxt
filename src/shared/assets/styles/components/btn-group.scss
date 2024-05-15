@@ -1,0 +1,35 @@
+
+// обертка для кнопок, если их несколько в ряд
+.btn-group {
+    grid-column: col1-start / span 2;
+    grid-template-rows: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: $grid-gap;
+
+    @include start-at("md") {
+        & [data-color="gray"] {
+            // margin-right: 20px;
+        }
+        
+        justify-content: flex-start;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    &[data-type="mobile"] {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+
+        @include start-at("lg") {
+            display: none;
+        }
+    }
+
+    &.wide {
+        margin-top: 15px*$rem;
+        justify-items: center;
+    }
+}
+

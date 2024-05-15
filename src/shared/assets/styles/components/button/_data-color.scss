@@ -1,0 +1,169 @@
+.button,
+.multicolor:hover {
+  &[data-color="green"] {
+    @include btn-variant($bg: var(--bg_btn_secondary), $bg-hover: var(--bg_hover_btn_secondary));
+  }
+
+  &[data-color="purple"] {
+    @include btn-variant($bg: var(--bg_btn_primary), $bg-hover: var(--bg_hover_btn_primary));
+  }
+
+  &[data-color="gray"] {
+    @include btn-variant(
+      $bg: var(--color_white),
+      $bg-hover: var(--bg-blocks),
+      $color: var(--color_light_purple),
+      $color-hover: var(--brand_color)
+    );
+
+    font-family: $font-family-medium;
+    box-shadow: var(--box_shadow_block);
+  }
+
+  &[data-color="light-purple"] {
+    @include btn-variant($bg: var(--bg_btn_light_purple), $bg-hover: var(--color_secondary_8));
+
+    color: var(--color_btn_light_purple);
+  }
+
+  &[data-color="light-purple-reverse"] {
+    @include btn-variant(
+      $bg-hover: var(--bg_hover_btn_light_purple_reverse),
+      $bg: var(--bg_btn_light_purple_reverse),
+      $color: var(--color_btn_light_purple_reverse),
+      $color-hover: var(--color_hover_btn_light_purple_reverse),
+      $border-color: var(--border_btn_light_purple_reverse)
+    );
+
+    &:hover {
+      border-color: var(--color_secondary);
+    }
+  }
+
+  &[data-color="red"] {
+    @include btn-variant($bg: var(--color_danger), $bg-hover: var(--bg_btn_hover_danger));
+  }
+
+  &[data-color="purple-reverse"] {
+    @include btn-variant(
+      $bg: var(--bg_btn_purple_reverse),
+      $bg-hover: var(--bg_hover_btn_purple_reverse),
+      $color: var(--color_btn_purple_reverse)
+    );
+  }
+
+  &[data-color="lightness-purple"] {
+    @include btn-variant(
+      $bg: var(--bg_btn_lightness_purple),
+      $bg-hover: var(--bg_hover_btn_lightness_purple),
+      $color: var(--color_btn_lightness_purple)
+    );
+  }
+
+  &[data-color="blue"] {
+    @include btn-variant($bg: var(--bg_btn_blue), $bg-hover: var(--bg_hover_btn_blue), $color: var(--color_btn_blue));
+  }
+
+  &[data-color="light-blue"] {
+    @include btn-variant(
+      $bg: var(--bg_btn_lightness_blue),
+      $bg-hover: var(--bg_hover_btn_lightness_blue),
+      $color: var(--color_btn_lightness_blue)
+    );
+  }
+
+  &[data-color="orange"] {
+    @include btn-variant(
+      $bg: var(--bg_btn_orange),
+      $bg-hover: var(--bg_hover_btn_orange),
+      $color: var(--color_btn_orange)
+    );
+  }
+
+  &[data-color="tinkoff"] {
+    @include btn-variant(
+      $bg: var(--tinkoff-yellow),
+      $bg-hover: var(--tinkoff-yellow-hover),
+      $color: var(--tinkoff-black),
+      $color-hover: var(--tinkoff-black)
+    );
+  }
+
+  &[data-color="heart"] {
+    @include btn-variant(
+      $bg-hover: var(--color-primary-dark-3),
+      $bg: var(--bg_btn_light_purple_reverse),
+      $color: var(--color_btn_light_purple_reverse),
+      $color-hover: var(--color_text),
+      $border-color: transparent
+    );
+
+    &:hover {
+      border-color: var(--color-primary-dark-3);
+    }
+
+    & .icon-full-heart {
+      margin-right: 8px;
+
+      color: var(--color_red);
+    }
+  }
+
+  &[data-selected="select"] {
+    @include btn-variant(
+      $bg: var(--bg_btn_selected),
+      $color: var(--color_btn_selected),
+      $bg-hover: var(--bg_btn_selected)
+    );
+
+    & .icon-heart {
+      color: #fff;
+    }
+
+    //box-shadow: 0px 1px 7px rgba(0,0,0, 0.3) inset;
+  }
+
+  &[data-color="gray-light"] {
+    @include btn-variant(
+      $bg: var(--bg_very_light_blue),
+      $bg-hover: var(--bg_hover_btn_primary),
+      $color: var(--color_text)
+    );
+
+    &.active {
+      @include btn-variant(
+        $bg: var(--bg_hover_btn_primary),
+        $bg-hover: var(--bg_hover_btn_primary),
+        $color-hover: #fff
+      );
+    }
+  }
+
+  &[data-color="gray-outline"] {
+    color: var(--color_text);
+    background-color: transparent;
+    border: 1px solid var(--color-line-light-gray);
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+button.multicolor {
+  &[data-color="light-purple"] {
+    @include btn-variant(
+      $bg: var(--bg_very_light_blue),
+      $bg-hover: var(--bg_hover_btn_primary),
+      $color: var(--color_text)
+    );
+  }
+
+  &[data-color="red"] {
+    @include btn-variant(
+      $bg: var(--bg_very_light_blue),
+      $bg-hover: var(--bg_btn_hover_danger),
+      $color: var(--color_text)
+    );
+  }
+}

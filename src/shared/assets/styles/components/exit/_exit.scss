@@ -1,0 +1,25 @@
+.exit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    line-height: 1;
+
+    color: var(--color_exit);
+
+    cursor: pointer;
+
+    &__title {
+        font-size: 16px*$tem;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        margin-left: 8px*$rem;
+
+        i {
+            font-size: 18px*$tem;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.button {
+    &_size_l {
+        padding: 7px*$rem 25px*$rem;
+    }
+
+    &_size_m {
+        padding-left: 15px*$rem;
+        padding-right: 15px*$rem;
+    }
+
+    &_size_xs {
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    &_size_s {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &_width_full {
+        width: 100%;
+    }
+
+    &_width_full-lg {
+        @include active-by("lg") {
+            width: 100%;
+        }
+    }
+
+    &__icon {
+        &[data-color="green"] {
+            color: var(--color_success);
+        }
+        &[data-color="red"] {
+            color: var(--color_danger);
+        }
+        &[data-color="blue"] {
+            color: var(--color_primary);
+        }
+        &[data-color="gray"] {
+            color: #a6a6a6;
+        }
+    }
+}

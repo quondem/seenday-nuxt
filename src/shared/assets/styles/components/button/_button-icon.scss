@@ -1,0 +1,38 @@
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px * $rem;
+
+  font-size: 14px * $tem;
+  font-family: $font-family-base;
+  text-align: center;
+  color: var(--color_text);
+
+  border-radius: $border-radius;
+
+  transition: all 0.3s ease;
+
+  border: 1px solid transparent;
+  // white-space     : nowrap;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: none;
+    outline: none;
+  }
+}

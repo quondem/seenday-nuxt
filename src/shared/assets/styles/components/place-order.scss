@@ -1,0 +1,36 @@
+.place-order {
+    order: 2;
+    grid-column: col1-start / span 2;
+    display: grid;
+    grid-row-gap: $grid-gap;
+    align-self: flex-start;
+
+    @include start-at("lg") {
+        order: 3;
+        grid-column: col2-start / span 1;
+    }
+
+    &.reverse {
+        @include start-at("lg") {
+            order: 3;
+            grid-column: col1-start / span 1;
+            grid-row: row2-start / span 1;
+        }  
+    }
+
+    & button[data-color="light-purple"] {
+        justify-self: center;
+    }
+}
+
+.place-order__btn {
+    justify-self: center;
+}
+
+.place-order--two-col {
+    order: 1;
+
+    @include start-at("lg") {
+        order: 2;
+    }
+}

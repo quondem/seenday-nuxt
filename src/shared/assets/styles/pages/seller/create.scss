@@ -1,0 +1,24 @@
+.connect-seller {
+  max-width: 1390px;
+  width: 100%;
+  grid-column: 1 / span 2;
+
+  & .link {
+    display: inline-flex;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+    font-family: $font-family-medium;
+
+    @include start-at("xslg") {
+      font-size: 25px;
+    }
+  }
+}
+
+@import "~/shared/assets/styles/components/seller/connect-seller-steps.scss";
+@import "~/shared/assets/styles/components/seller/connect-seller-step.scss";
+@import "~/shared/assets/styles/components/seller/connect-seller-step-block.scss";

@@ -1,0 +1,31 @@
+//Шаблон каркаса
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content";
+  grid-template-rows: $heightTop 1fr;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100%;
+
+  background-color: var(--bg_layout);
+
+  @include start-at("xslg") {
+    grid-template-areas:
+      "header header"
+      "navbar content";
+    grid-template-columns: $widthShortNavbar 1fr;
+    grid-template-rows: $heightTop 1fr;
+  }
+
+  @include start-at("xl") {
+    grid-template-columns: auto 1fr;
+  }
+
+  @media print {
+    display: block;
+    background-color: white;
+  }
+}

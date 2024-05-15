@@ -1,0 +1,205 @@
+.order-sticker {
+    cursor: pointer;
+    margin-top: 5px*$rem;
+    border-radius: 3px*$rem 0 0 3px*$rem;
+    padding: 5px*$rem;
+    background-color: var(--border_order_info_nopay);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+}
+.order-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    align-items: flex-start;
+    padding: 10px*$rem;
+    grid-row-gap: 10px*$rem;
+    grid-column-gap: $grid-gap;
+    width: 100%;
+  
+    @include start-at("md") { 
+        padding: 15px*$rem;
+    }
+
+    @include start-at("xxl") {
+        grid-template-columns: 1fr minmax(160px, 160px);
+        // max-width: 1000px;
+        width: 100%;
+    }
+
+    &__btn {
+        @include start-at("xl") {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    &[data-border="purple"] {
+        border-left: 10px*$rem solid var(--border_order_info_picking);
+    }
+    &[data-border="green"] {
+        border-left: 10px*$rem solid var(--border_order_info_pay);
+    }
+    &[data-border="gray"] {
+        border-left: 10px*$rem solid var(--border_order_info_nopay);
+    }
+    &[data-border="light-purple"] {
+        border-left: 10px*$rem solid var(--bg_filter_color_in_work);
+    }
+    &[data-border="blue"] {
+        border-left: 10px*$rem solid var(--bg_filter_color_delivered);
+    }
+    &[data-border="red"] {
+        border-left: 10px*$rem solid var(--border_order_info_closed);
+    }
+    &[data-border="light-blue"] {
+        border-left: 10px*$rem solid var(--bg_filter_color_payable);
+    }
+    &[data-border="orange"] {
+        border-left: 10px*$rem solid var(--border_order_info_in_work);
+    }
+
+    &[data-bg="yellow"] {
+        background-color: var(--bg_order_info);
+    }
+}
+
+.order-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: calc($grid-gap / 2);
+    grid-column-gap: 5px*$rem;
+    width: 100%;
+
+    @include start-at("xslg") {
+        grid-template-columns:  repeat(auto-fit, minmax(150px,1fr));
+        grid-column-gap: 15px*$rem;
+        justify-content: space-between;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        grid-row: 1;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        display: block;
+        width: max-content;
+
+        @include start-at("xslg") {
+            margin-right: 20px*$rem;
+            margin-bottom: 7.5px;
+            
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        // @include start-at("lg") {
+        //     margin-bottom: 8px;
+        //     &:last-child {
+        //         margin-right: 0;
+        //     }
+        // }
+    }
+}
+
+
+.data-name {
+    display: block;
+    line-height: 1.3;
+
+    &.big-sub {
+        font-size: 18px*$tem;
+
+        @include start-at("lg") {
+            font-size: 21px*$tem;
+        }
+    }
+
+    &.sub {
+        font-size: 16px*$tem;
+
+        @include start-at("lg") {
+            font-size: 18px*$tem;
+        }
+    }
+
+    &.sup {    
+        font-size: 13px*$rem;
+
+       // @include start-at("xl") { margin-bottom: 5px*$rem; }
+
+        //span {  margin-left: 10px*$rem; }
+    }
+
+    span {
+        &[data-status="nopay"] {     
+            font-family: $font-family-bold;
+            color: var(--color_order_info_status_nopay);
+        }
+
+        &[data-status="in-work"] {     
+            font-family: $font-family-bold;
+            color: var(--color_order_info_status_in_work);
+        }
+
+        &[data-status="pay"] {     
+            font-family: $font-family-bold;
+            color: var(--color_order_info_status_pay);
+        }
+    }  
+}
+
+
+.school-data {
+    padding: 15px;
+
+    &__sizes {
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-top: 10px*$rem;
+    }
+}
+
+.school-data p {
+    margin-top: 5px;
+    width: 120px;
+}
+
+.order-total-data {
+    padding: 15px;
+
+    &__sizes {
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-top: 5px*$rem;
+        width: 100%;
+
+        & p {
+            margin-top: 5px;
+            width: 48%;
+            word-break: break-all;
+            font-size: 12px;
+
+            @include start-at("xl") {
+                // width: 48%;
+
+                &[data-type="margin-right"] {
+                    margin-right: 7px;
+                }
+            }
+        }
+
+        // &[data-type="desktop"] {
+        //     & p {
+        //         width: 100%;
+        //     }
+        // }
+    }
+
+
+}

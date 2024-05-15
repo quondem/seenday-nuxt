@@ -1,0 +1,44 @@
+.title-block {
+    display: block;
+    
+    font-size: 18px*$rem;
+    font-family: $font-family-base;
+
+    color: var(--color_text_title_block);
+
+    &__bold {
+        font-family: $font-family-bold;
+        color: var(--color_text_title_block);
+
+        &.link {
+            position: relative;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            // &::before {
+            //     position: absolute;
+            //     top: 100%;
+            //     left: 0;
+
+            //     width: 100%;
+            //     height: 1px;
+
+            //     background-color: var(--color_text_title_block);
+
+            //     opacity: 1;
+
+            //     transition: all 0.3s ease;
+
+            //     content: '';
+            // }
+
+            // &:hover::before {
+            //     opacity: 0;
+            // }
+        }
+
+    }
+}

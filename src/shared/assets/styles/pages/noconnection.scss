@@ -1,0 +1,50 @@
+.noconnection-page {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: url(../images/connection.png);
+
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  // @include active-by("lg") {
+  //   height: calc(var(--app-height, 1vh) * 100);
+  // }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__img {
+    margin-top: -60px;
+    @include start-at("md") {
+      margin-top: 0;
+    }
+    margin-bottom: 10px;
+    width: 100px;
+    height: auto;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    width: 150px;
+  }
+}

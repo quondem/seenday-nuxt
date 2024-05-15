@@ -1,0 +1,7 @@
+album {
+  grid-column: 1 / span;
+
+  & .no-picking {
+    margin-bottom: 15px;
+  }
+}

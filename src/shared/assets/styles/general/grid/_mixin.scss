@@ -1,0 +1,29 @@
+@import "config";
+
+@function get-breakpoint-value($breakpoint-name) {
+  $breakpoint: map-get($grid-breakpoints, $breakpoint-name);
+
+  @if $breakpoint {
+    @return $breakpoint;
+  } @else {
+    @error "Unknown breakpoint: #{$breakpoint-name}";
+  }
+}
+
+/*
+  Генератор mobile first медиа-запросов
+*/
+@mixin start-at($breakpoint-name) {
+  @media (min-width: get-breakpoint-value($breakpoint-name)) {
+    @content;
+  }
+}
+
+/*
+  Генератор desktop first медиа-запросов
+*/
+@mixin active-by($breakpoint-name) {
+  @media (max-width: get-breakpoint-value($breakpoint-name)) {
+    @content;
+  }
+}

@@ -1,0 +1,272 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/color";
+@import "../../mixin/mediaScreen";
+@import '../../mixin/fonts';
+@import '../../components/logo/__text/logo__text';
+
+//Имена папок шрифтов и файлов
+$font-base: 'pt-sans-regular';
+$font-medium: 'open-sans-semibold';
+$font-bold: 'FuturaPT-Bold';
+$font-light: 'open-sans-regular';
+
+//Здесь формируются сss стили семейства шрифтов
+@include family-font($font-base, $font-base);
+@include family-font($font-medium, $font-medium);
+@include family-font($font-bold, $font-bold);
+@include family-font($font-light, $font-light);
+
+.interfaces {
+    text-align: center;
+
+    &__title {
+        display: block;
+        margin-top: 15px*$rem;
+        
+        font-family: $font-family-bold;
+        font-size: 22px*$tem;
+        text-align: center;
+
+        color: $snow;
+
+        @include start-at("md") {
+            font-size: 30px*$tem; 
+        }
+    }
+
+    &__text {
+        margin-bottom: 20px*$rem;
+
+        color: #ffffff;
+        font-size: 16px*$rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include start-at("md") {
+            margin-bottom: 15px*$rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            font-size: 18px*$tem; 
+        }
+    }
+
+    &__link {
+        display: inline;
+
+        color: #14a9cc;
+    }
+
+    &__descr {
+        margin-top: 20px*$rem;
+
+        font-size: 18px*$rem;
+        line-height: 1.2;
+
+        color: #ffffff;
+
+        opacity: 0.6;
+    }
+
+    &__footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding-bottom: 10px;
+
+        font-size: 14px;
+        color: #ffffff;
+
+
+        &[data-color="gray"] {
+            color: #bfbed9;
+        }
+
+        @include start-at("xslg") {
+            position: static;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            flex: 0 0 auto;
+        }
+    }
+
+
+    &_404 {
+        padding: 0 15px;
+        height: 100vh;
+        min-height: 100vh;
+
+        @include start-at("xslg") {
+            padding: 0 15px;
+        }
+    }
+
+    &_browsers {
+        padding: 10px 10px;
+
+        & .interfaces__footer {
+            position: static;
+            padding-bottom: 0;
+
+            @include start-at("xslg") {
+                padding-bottom: 10px;
+            }
+        }
+
+        
+        @include start-at("xslg") {
+            padding: 0 15px;
+        }
+    }
+}
+
+wrapper-interfaces {
+    position: relative;
+    width: 100%;
+    padding: 50px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh;
+
+    background-color: #47016f;
+
+    overflow-y: auto;
+
+    @include start-at("md") {
+        padding-top: 25px*$rem;
+        padding-bottom: 25px*$rem;
+    }
+
+    &[data-bg="purple"] {
+        background-color: $bg-404;
+    }
+}
+
+.show-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+
+    cursor: pointer;
+
+    &::before {
+        font-size: 20px*$tem;
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: bold;
+
+        color: #909090;
+    }
+}
+
+.form-interfaces {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px*$rem;
+
+    @include start-at("md") {
+        margin-top: 50px*$rem;
+    }
+
+    &__item {
+        position: relative;
+        z-index: 2;
+
+        margin-bottom: 15px*$rem;
+
+        background: rgba(252,252,253, 0.08);
+    }
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        z-index: -1;
+
+        display: block;
+
+        line-height: 1;
+        font-family: $font-family-base;
+
+        font-size: 14px*$tem;
+
+        color: #909090;
+
+        transition: all 0.3s ease;
+
+        &[disabled] {
+            opacity: 0.5;
+        }
+    }
+
+    &__input {
+        padding-left: 15px*$rem;
+        width: 100%;
+        height: 48px*$rem;
+        display: block;
+
+        font-size: 14px*$tem;
+        font-family: $font-family-base;
+        text-align: left;
+
+        background-color: transparent;
+
+        color: #ffffff;
+        border: none;
+        outline: none;
+                
+        &:focus + label,
+        &[data-have-content="1"] + label {
+            transform: translateY(5px);
+            top: 0;
+
+            font-size: 10px*$tem;
+        }
+
+        &:focus + span + label,
+        &[data-have-content="1"] + span + label {
+            transform: translateY(5px);
+            top: 0;
+
+            font-size: 10px*$tem;
+        }
+
+        &[type="password"] ~ .show-password::before  {
+            content: "\f06e";
+        }
+
+        &[type="text"] ~ .show-password::before  {
+            content: "\f070";
+        }
+
+    }
+
+    &__btn {
+        width: 100%;
+        margin-top: 20px*$rem;
+        margin-bottom: 30px*$rem;
+
+
+        button {
+            height: 50px*$rem;
+        }
+
+        @include start-at("md") {
+            margin-top: 40px*$rem;
+            margin-bottom: 40px*$rem;    
+        }
+    }
+}
+

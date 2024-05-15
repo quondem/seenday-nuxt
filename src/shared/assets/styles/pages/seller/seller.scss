@@ -1,0 +1,22 @@
+.connect-seller {
+  max-width: 900px;
+  width: 100%;
+  grid-column: 1 / span 2;
+  padding-top: 20px;
+
+  @include start-at("xslg") {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+    font-family: $font-family-medium;
+
+    @include start-at("xslg") {
+      font-size: 25px;
+    }
+  }
+}
+

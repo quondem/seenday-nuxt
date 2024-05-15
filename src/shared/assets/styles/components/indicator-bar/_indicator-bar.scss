@@ -1,0 +1,35 @@
+.indicator-bar {
+  position: relative;
+
+  &__linear,
+  &__value {
+    position: relative;
+    height: 8px;
+
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  &__linear {
+    background: var(--bg_indicator_bar);;
+  }
+
+  &__value {
+    background: var(--bg_indicator_bar_value);
+  }
+
+  &__footer {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  &__text {
+    display: block;
+
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

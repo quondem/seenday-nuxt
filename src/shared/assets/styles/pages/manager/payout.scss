@@ -1,0 +1,83 @@
+.payout {
+	& .text-when-payout {
+		font-size: 10px*$tem;
+
+		@include start-at("md") {
+			font-size: 12px*$tem;
+		}
+	}
+
+	& .bar-block {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		// flex-grow: 1;
+
+		gap: $grid-gap-blocks;
+	}
+
+	& .bar {
+		padding: $inner-gap;
+
+		width: 100%;
+
+		@include start-at("md") {
+			width: auto;
+		}
+
+		&__title {
+			font-size: 16px*$tem;
+
+			@include start-at("md") {
+				font-size: 18px*$tem;
+			}
+			@include start-at("xl") {
+				font-size: 20px*$tem;
+			}
+		}
+
+		&__title-desc {
+			font-size: 11px*$tem;
+
+			@include start-at("md") {
+				font-size: 12px*$tem;
+			}
+			@include start-at("xl") {
+				font-size: 13px*$tem;
+			}
+		}
+
+		&__text {
+			font-size: 12px*$tem;
+
+			@include start-at("md") {
+				font-size: 13px*$tem;
+			}
+			@include start-at("xl") {
+				font-size: 14px*$tem;
+			}
+		}
+
+		&__inside-blocks {
+			display: flex;
+			gap: $grid-gap-blocks;
+		}
+
+		&__btns {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: $grid-gap-blocks;
+
+			padding-left: 15px*$rem;
+
+			border-left: 1px solid #e6ebf1;
+		}
+
+		&__blue {
+			background: var(--color_blue);
+
+			color: #fff;
+		}
+	}
+}

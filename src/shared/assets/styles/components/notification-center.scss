@@ -1,0 +1,75 @@
+.notifications-center {
+  & {
+    --color_red: #cd5c5c;
+    --color_green: #7bcd86;
+  }
+
+  right: 0;
+  z-index: var(--z-toast);
+  position: fixed;
+  word-break: break-word;
+  margin: 5px * $rem;
+  border-radius: 5px * $rem;
+  padding: 10px * $rem;
+  max-width: 100%;
+  background: #343360;
+  font-size: 12px * $tem;
+
+  @include start-at("md") {
+    max-width: 50%;
+  }
+
+  &__head {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 7px * $rem;
+    color: #fff;
+  }
+
+  &__block {
+    border-top: 1px * $rem solid #454b6b;
+    padding: 7px * $rem;
+    color: #ced4da;
+
+    & i {
+      margin-right: 7px;
+    }
+
+    & i.icon-exclamation-circle {
+      color: var(--color_red);
+    }
+    & i.icon-check-circle {
+      color: var(--color_green);
+    }
+    & i.icon-hourglass-start {
+      color: var(--color_blue);
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__close {
+    background: none;
+    color: inherit;
+    border: none;
+    margin: -15px * $rem -10px * $rem 0 5px * $rem;
+    cursor: pointer;
+    flex: auto;
+    text-align: right;
+
+    & i {
+      border-radius: 5px * $rem;
+      padding: 4px * $rem 7px * $rem 4px * $rem 7px * $rem;
+
+      &:hover {
+        background-color: var(--color_red);
+        color: #fff;
+      }
+    }
+  }
+}

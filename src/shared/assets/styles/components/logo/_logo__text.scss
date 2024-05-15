@@ -1,0 +1,17 @@
+.logo__text {
+    width: $widthLogo;
+    
+    font-size: 18px*$tem;
+    font-family: $font-family-bold;
+    text-align: center;
+    
+    &[data-color="white"] {
+        color: var(--color_logo);
+    }
+    
+    &[data-size="large"] {
+        width: auto;
+        
+        font-size: 30px*$tem;
+    }
+}

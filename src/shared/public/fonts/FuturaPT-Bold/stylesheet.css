@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "FuturaPT-Bold";
+    font-display: swap;
+    src: local("FuturaPT-Bold"), local("FuturaPT-Bold"), url("FuturaPT-Bold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+}

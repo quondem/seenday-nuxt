@@ -1,0 +1,76 @@
+.subs {
+    &__open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+        
+        transition: opacity 0.3s ease;
+
+        @include start-at("xl") {
+            height: 60%;
+
+            opacity: 0.4;
+            background-color: var(--bg_hover_subs_open);
+
+            &[data-size="full"] {
+                height: 100%;
+            }
+
+            &:hover {
+                background-color: var(--bg_hover_subs_open);
+                opacity: 0.9;
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &__to {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 1;
+        
+        transition: opacity 0.3s ease;
+
+        & > div {
+            display: none;
+            margin-top: auto;
+            padding: 8px;
+
+            font-size: 13px*$rem;
+            text-align: center;
+            color: var(--open_color);
+            
+            background-color: rgba(0, 0, 0, 0.5);
+
+            opacity: 1;
+
+            @include start-at("xl") {
+                display: block;
+
+                font-size: 14px*$rem;
+
+                background-color: rgba(0, 0, 0, 0.4);
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,275 @@
+.table-wrap {
+  position: relative;
+
+  min-width: 100%;
+
+  border-radius: 3px;
+
+  &__header {
+    padding: 16px 0;
+  }
+
+  &__main {
+    display: block;
+    width: 100%;
+
+    border-radius: 3px;
+    background-color: var(--bg_block);
+    box-shadow: var(--box_shadow_block);
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media print {
+      box-shadow: none;
+      border: 1px solid #222;
+      border-bottom: 0;
+      border-radius: 0;
+
+      overflow: hidden;
+    }
+  }
+
+  &_no-scroll {
+    width: max-content;
+  }
+
+  &_no-scroll &__main {
+    overflow-x: inherit;
+  }
+
+  &__content {
+    display: block;
+    min-width: 100%;
+  }
+
+  &__footer {
+    padding: 10px 20px 20px;
+  }
+
+  &__pagination {
+    padding: 16px 0 4px;
+  }
+}
+
+.clear-table {
+  text-align: right;
+  margin-bottom: 12px;
+
+  &__text {
+    cursor: pointer;
+    color: #7a7987;
+  }
+}
+
+.ui-table table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font-size: 14px;
+}
+
+.ui-table thead {
+  vertical-align: top;
+  border-bottom: 1px solid #eeeff2;
+  color: #7a7987;
+
+  @media print {
+    border-color: #222;
+  }
+}
+
+// row
+
+.ui-table .table-row {
+  &_white {
+    background-color: var(--color_white) !important;
+  }
+
+  &_gray {
+    background-color: var(--bg_row_table_order) !important;
+  }
+}
+
+.ui-table tbody tr {
+  &:nth-of-type(2n) {
+    background-color: var(--bg_row_table_order);
+  }
+
+  @media print {
+    border-bottom: 1px solid #222;
+  }
+
+  @media screen {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--border_td_table_order);
+    }
+  }
+
+  &.white {
+    background-color: var(--bg_row_secondary_table_order) !important;
+  }
+
+  &.gray {
+    background-color: var(--bg_row_table_order) !important;
+  }
+}
+
+// cell
+
+.ui-table td {
+  padding: 8px 10px 8px 10px;
+  color: var(--color_td_table_order);
+  border-right: 1px solid var(--border_td_table_order);
+
+  text-align: left;
+
+  &:last-of-type {
+    border-right: none;
+  }
+
+  @include active-by("lg") {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @media print {
+    color: #222;
+    border-color: #222;
+  }
+
+  &.error {
+    background-color: rgba(147, 0, 0, 0.13);
+  }
+}
+
+.ui-table th {
+  padding: 12px 10px 12px 10px;
+  text-align: left;
+
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color_th_table_order);
+  background-color: var(--bg_table_order);
+  border-right: 1px solid var(--border_table_order);
+
+  @media print {
+    background-color: transparent;
+
+    & span {
+      color: #222;
+    }
+  }
+
+  &:first-of-type {
+    border-top-left-radius: 3px;
+
+    @media print {
+      border-radius: 0;
+    }
+  }
+
+  &:last-of-type {
+    border-right: none;
+    border-top-right-radius: 3px;
+
+    @media print {
+      border-radius: 0;
+    }
+  }
+
+  &.sortable {
+    padding-right: 20px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #63629a;
+
+      & span.sortable {
+        &::before,
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @media print {
+    border-color: #222;
+  }
+}
+
+// fix first col
+.ui-table table.table-fix-first-col {
+  position: relative;
+
+  thead th:first-child,
+  tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      box-shadow: 3px 0px 8px 0 rgb(5 24 54 / 5%);
+    }
+  }
+}
+
+// sort
+
+.ui-table th span.sortable {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: none;
+    content: "";
+    top: 50%;
+    right: -12px;
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+  }
+
+  &::before {
+    margin-top: -9px;
+    border-bottom: 4px solid #fff;
+  }
+
+  &::after {
+    border-top: 4px solid #fff;
+  }
+
+  &.sorted-desc::before {
+    border-bottom-color: #2c0061 !important;
+  }
+
+  &.sorted-asc::after {
+    border-top-color: #2c0061 !important;
+  }
+}
+
+.ui-table th span.sortable {
+  &:hover,
+  &.sorted-desc,
+  &.sorted-asc {
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+}

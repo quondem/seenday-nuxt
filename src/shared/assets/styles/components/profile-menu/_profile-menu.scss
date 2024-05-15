@@ -1,0 +1,46 @@
+.profile-menu {
+    position: relative;
+
+    display: block;
+
+    &::before,
+    &::after {
+        position: absolute;
+        bottom: 100%;
+        right: 16px;
+
+        height: 0;
+        width: 0;
+        
+        pointer-events: none;
+        border: solid transparent;
+
+        content: '';
+
+        @include start-at("xslg") {
+            right: 36px;
+        }
+    }
+
+    &::before {
+        border-width: 6px;
+        margin: 0 -6px;
+        border-bottom-color: var(--border_before_profile_menu);
+
+    }
+
+    &::after {
+        border-width: 5px;
+        margin: 0 -5px;
+        border-bottom-color: var(--border_after_profile_menu);
+    }
+
+    &__select-list {
+        position: static;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        box-shadow: var(--shadow_select_prifile_menu_list);
+        border: 1px solid var(--border_select_prifile_menu_list);
+    }
+}

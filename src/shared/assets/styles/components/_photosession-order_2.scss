@@ -1,0 +1,380 @@
+wrap-photosession {
+    display: block;
+
+    @include start-at("md") {
+        margin-left: -7.5px*$rem;
+        margin-right: -7.5px*$rem;
+    }
+}
+
+.photosession-order {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    //padding-top: $grid-gap;
+    //padding-bottom: $grid-gap;
+    color: var(--color_photosession_order);
+
+    @include start-at("md") {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+    }
+
+    @include start-at("lg") {
+        justify-content: flex-start;
+    }
+}
+.photo-data {
+    justify-self: flex-start;
+
+    &__check {
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-right: 5px;
+
+    
+        padding: 3px 0 3px 0;
+        border-radius: 2px*$rem;
+        
+        transition: all 0.3s ease;
+
+        @include start-at("md") {
+            padding: 3px 5px*$rem;
+            flex-wrap: nowrap;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &:hover {
+            @include start-at("md") {
+                background-color: var(--bg_hover_photosesstion_order_check);
+                cursor: default;
+            }
+        }
+
+        &.no-hover {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: 6px*$rem;
+
+            cursor: default;
+            
+            &:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+
+            & .checkbox,
+            & .photo-data__hover {
+                cursor: default;
+            }           
+        }
+    }
+
+    &__show-price {
+        margin-left: 5px;
+
+        background-color: var(--bg_photosesstion_order_show_price);
+        border-radius: 3px;
+
+        &::before {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Font Awesome 5 Pro';
+            content: '\f129';
+            color: #ffffff;
+        }
+
+        @include start-at("md") {
+            display: none;
+        }
+    }
+
+    & .checkbox {
+        margin-right: 8px*$rem;
+        cursor: pointer;
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 10px*$rem;
+        grid-column: 2 / span 1;
+        grid-row: 1;
+       
+        font-size: 14px*$rem;
+
+        color: var(--color_other);
+
+        &[data-type="name-photo"] {
+            font-size: 16px*$rem;
+            font-weight: 500;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @include start-at("md") {
+            display: flex;
+            align-items: flex-start;
+        }
+
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        @include start-at("md") {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__price {
+        flex-grow: 1;
+        padding-top: 3px;
+        padding-bottom: 8px;
+        width: 100%;   
+        display: none;    
+
+        opacity: 0.7;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        & b {
+            @include start-at("md") {
+                display: none;
+            }
+        }
+
+        @include start-at("md") {
+            padding-top: 0;
+            padding-bottom: 2px;
+            width: auto;
+            display: block;
+
+            font-size: 14px;
+        }
+
+        span {
+            border-bottom: 1px solid var(--color_other);
+        }
+    }
+
+    &__text {
+        display: block;
+        margin-right: 10px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 12px*$tem;
+
+        @include start-at("md") {
+            font-size: 14px*$tem;
+        }
+
+        &.max-content {
+            width: min-content;
+            min-width: 90px;
+
+            @include start-at("xslg") {
+                min-width: 150px;
+            }
+        }
+
+        &[data-size="short"] {
+            margin-right: 0;
+
+            font-size: 13px*$tem;
+
+            @include start-at("md") {
+                font-size: 14px*$tem;
+            }
+        }
+
+        & span[data-text="text-title"] {
+            display: none;
+
+            @include start-at("xslg") {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__input {
+        height: 20px;
+        width: 35px*$rem;
+        margin-left: auto;
+
+        @include start-at("xslg") {
+            width: 40px*$rem;
+        }
+    }
+
+    &__hover {
+        position: relative;
+        cursor: pointer;
+
+        font-family: $font-family-medium;
+
+        &::before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed var(--color_photosession_order);
+
+            content: '';
+            opacity: 1;
+
+            transition: all 0.3s ease;
+        }
+
+        &:hover::before {
+            opacity: 0;
+        }
+
+        &.no-hover {
+            cursor: default;
+        }
+    }
+
+    &__item {
+        display: block;
+    }
+
+    &__count {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__count-field {
+        display: flex;
+        white-space: nowrap;
+
+        & .input {
+            margin-right: 8px;
+        }
+    }
+}
+
+.photo-order {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: auto max-content;
+    grid-column-gap: 10px*$rem;
+    grid-row-gap: 10px*$rem;
+    padding: 15px*$rem 10px*$rem;
+    align-self: flex-start;
+
+    @include start-at("md") {
+        grid-template-columns: 90px*$rem 1fr;
+        align-content: flex-start;
+        margin-bottom: 15px*$rem;
+        margin-right: 7.5px*$rem;
+        margin-left: 7.5px*$rem;
+        padding: 15px*$rem;
+    }
+
+    @include start-at("xslg") {
+        grid-column-gap: 15px*$rem;
+        grid-template-columns: 90px*$rem 1fr;
+    }
+
+    &__photo {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    &__photo-data {
+        display: block;
+        margin-bottom: 8px*$rem;
+        grid-column: 1 / span 2;
+
+        @include start-at("md") {
+            width: 100%;
+        }
+        
+        &_view {
+            width: max-content;
+            & .photo-data__check {
+                justify-content: space-between;
+            }
+
+            & .photo-data__input {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__fon-data {
+        grid-column: 1 / span 2;
+
+        & .photo-data__check {
+            @include start-at("md") {
+                width: auto;
+            }
+        }
+
+        & .photo-data__count .photo-data__text  {
+            margin-right: 8px;
+        }
+
+        & .photo-data__count-field .photo-data__input  {
+            margin-right: 5px;
+            margin-left: 8px;
+        }
+
+        & .photo-data__count-field .photo-data__text {
+            margin-right: 0;
+        }
+    }
+}
+
+
+photo-data-check[data-checked="1"] {
+    background-color: var(--bg_photo_data_check);
+    transition: all 0.3s ease;
+}
+
+photo-data-check[data-checked="0"] {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+
+photo-data-fon {
+    display: block;
+
+    & .photo-data__check {
+        justify-content: flex-start;
+    }
+
+    & .photo-data__input {
+        margin-left: 0;
+    }
+}

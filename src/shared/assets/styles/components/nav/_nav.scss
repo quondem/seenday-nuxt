@@ -1,0 +1,20 @@
+.nav {
+    padding-bottom: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include start-at("xslg") {
+        padding-bottom: 30px;
+        padding-top: 10px;
+    }
+}
+
+
+@import "nav__item";
+@import "nav__icon";
+@import "nav__item-link";
+@import "nav__title";
+@import "nav__lists";
+@import "nav__arrow-link";
+@import "nav__sub-menu";

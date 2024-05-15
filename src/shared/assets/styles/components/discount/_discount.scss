@@ -1,0 +1,11 @@
+// Блок с инфомацией о скидке
+.discount {
+    display: block;
+    padding: 5px*$rem 15px*$rem;
+
+    text-align: center;
+    font-size: 14px*$tem;
+    line-height: 1.2;
+
+    border-radius: $border-radius;
+}

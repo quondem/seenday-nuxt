@@ -1,0 +1,409 @@
+// для коллекций блоков с фотографиями
+.collect-photo {
+  --primary-color-h: 217;
+  --primary-color-s: 62%;
+  --primary-color-l: 96%;
+
+  --darknessTransform: 15%;
+  --darknes3Transform: 4%;
+
+  --primary-color-dark-l: calc(var(--primary-color-l) - var(--darknessTransform));
+  --primary-color-dark-3-l: calc(var(--primary-color-l) - var(--darknes3Transform));
+
+  --color-primary-dark: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-dark-l));
+  --color-primary-dark-3: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-dark-3-l));
+
+  --background-spinner: var(--color-primary-dark);
+  --bg-lazy-loader: var(--background-spinner);
+
+  display: block;
+  grid-column: col1-start / span 2;
+  
+
+  &__title-page {
+    margin-bottom: 15px * $rem;
+  }
+
+  &__btn {
+    display: grid;
+    margin-bottom: 15px * $rem;
+
+    grid-gap: $grid-gap;
+    justify-self: stretch;
+    align-items: flex-start;
+
+    @include start-at("md") {
+      justify-items: flex-end;
+    }
+
+    &--center {
+      justify-items: center;
+    }
+
+    &--line {
+      @include start-at("md") {
+        grid-template-columns: max-content max-content;
+        justify-content: flex-end;
+        grid-template-rows: 1fr;
+      }
+    }
+
+    &--mobile {
+      display: grid;
+      margin-top: 10px;
+
+      @include start-at("xslg") {
+        display: none;
+      }
+    }
+  }
+
+  &__link-disk {
+    order: 2;
+    justify-self: center;
+
+    @include start-at("md") {
+      order: 1;
+    }
+  }
+
+  &__further {
+    order: 1;
+
+    @include start-at("md") {
+      order: 2;
+    }
+  }
+
+  &__choose,
+  &__users {
+    display: block;
+
+    padding-top: 10px * $rem;
+    padding-bottom: 10px * $rem;
+  }
+
+  &__notice {
+    margin-top: 5px * $rem;
+    margin-bottom: 15px * $rem;
+  }
+
+  &__choose .delete:hover,
+  &__choose .open:hover {
+    background-color: var(--bg_collect_photo_hover_choose);
+  }
+
+  // &__users .delete,
+  // &__users .recover,
+  &__choose .delete {
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &--wide {
+    grid-column: col1-start / span 2;
+    justify-content: center;
+  }
+
+  &__users {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  &__sort {
+    margin-bottom: 10px * $rem;
+  }
+
+  &__btn-back {
+    width: 100%;
+    margin-bottom: 15px;
+
+    @include start-at("xslg") {
+      position: absolute;
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+
+  &__btn-upload {
+    width: 100%;
+
+    @include start-at("md") {
+      width: auto;
+    }
+  }
+
+  & .notice {
+    margin-bottom: 15px * $rem;
+
+    & .phone {
+      // margin-top: 5px*$rem;
+      & a {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__header {
+    & .notice {
+      order: -1;
+    }
+
+    @include start-at("xslg") {
+      &_sticky {
+        position: sticky;
+        z-index: 3;
+
+        align-items: center;
+
+        &::before {
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          z-index: -1;
+          height: calc(100% + 20px);
+          width: calc(100% + 20px);
+          background-color: #eef3fb;
+          content: "";
+        }
+
+        & .notice {
+          order: 0;
+          margin-bottom: 0;
+          width: 300px;
+          flex-grow: 1;
+          margin-right: 12px;
+        }
+
+        & .notice__text {
+          display: flex;
+          align-items: center;
+
+          overflow: hidden;
+        }
+
+        & .notice__seller {
+          margin-right: 12px;
+
+          white-space: nowrap;
+
+          @include active-by("lg") {
+            & span {
+              display: none;
+            }
+          }
+
+          @include active-by("xslg") {
+            & span {
+              display: inline;
+            }
+          }
+        }
+
+        & .phone {
+          margin-left: 12px;
+
+          white-space: nowrap;
+
+          @include active-by("lg") {
+            & span {
+              display: none;
+            }
+          }
+
+          @include active-by("xslg") {
+            & span {
+              display: inline;
+            }
+          }
+        }
+
+        & .notice__inn {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    @include start-at("md") {
+      position: sticky;
+      z-index: 3;
+      top: 10px;
+      align-items: center;
+
+      &::before {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        z-index: -1;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        background-color: #eef3fb;
+        content: "";
+      }
+
+      & > .button:first-child {
+        margin-right: 15px;
+      }
+
+      & button:last-child {
+        margin-left: 5px;
+      }
+    }
+
+    @include start-at("xslg") {
+      top: calc(10px + $heightTop);
+    }
+
+    @include active-by("md") {
+      &_flex {
+        display: flex;
+        gap: 5px;
+
+        margin-bottom: 5px;
+      }
+
+      &_flex > .button {
+        width: 100%;
+      }
+    }
+  }
+
+  &__photos {
+    width: 100%;
+    overflow: hidden;
+
+    &_pd {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__no-photo {
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    & img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+
+      @include start-at("md") {
+        max-width: 250px;
+      }
+    }
+  }
+
+  &__select {
+    width: 200px;
+
+    @include start-at("md") {
+      height: 100%;
+      min-height: 32px;
+    }
+  }
+}
+
+wrapper-btn {
+  margin-bottom: 15px * $rem;
+
+  & .button:not([data-type="order-disk"]) {
+    width: 48%;
+
+    @include start-at("md") {
+      width: auto;
+    }
+  }
+}
+
+.collect-users {
+  &__subs {
+    opacity: 1;
+
+    & .open {
+      opacity: 0;
+    }
+
+    & .choose {
+      opacity: 0;
+    }
+
+    @include start-at(xl) {
+      &:hover {
+        & .open {
+          opacity: 0.4;
+        }
+
+        & .choose {
+          opacity: 0.5;
+        }
+      }
+
+      & .open:hover,
+      & .choose:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.collect-choose {
+  &__subs {
+    opacity: 1;
+
+    .open {
+      position: relative;
+      z-index: 2;
+
+      height: 100%;
+      opacity: 0;
+
+      transition: all 0.3s ease;
+
+      @include start-at("xl") {
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__load {
+    position: absolute;
+
+    margin: 1px;
+
+    width: 118px * $rem;
+    height: 128px * $rem;
+
+    @include start-at("lg") {
+      width: 148px * $rem;
+      height: 148px * $rem;
+    }
+
+    background-image: url("/marbery/projects/cabinet.seenday/images/load.gif");
+    background-position: center;
+    background-size: cover;
+    background-color: #fff;
+  }
+}
+
+.toggle-type-gallery {
+  display: flex;
+  justify-content: space-between;
+
+  @include start-at("lg") {
+    justify-content: flex-end;
+  }
+
+  & .dropdown-orientation {
+    height: 32px;
+  }
+
+  &_line {
+    width: 100%;
+
+    @include start-at("md") {
+      width: auto;
+    }
+  }
+}

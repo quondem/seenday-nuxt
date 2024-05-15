@@ -1,0 +1,43 @@
+.topbar-balance {
+    &__control {
+      & .button {
+        margin-right: 4px;
+      }
+    }
+  
+    &__profile-menu {
+      position: absolute;
+  
+      top: 102%;
+      right: 15px;
+  
+      width: 200px;
+  
+      cursor: default;
+  
+      @include start-at("xslg") {
+        top: 108%;
+        right: 30px;
+      }
+  
+      .profile-menu {
+        width: 100%;
+      }
+    }
+  
+    &__balance {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+  
+      span {
+        font-size: 20px;
+        font-weight: 900;
+      }
+  
+      & .button {
+        margin-top: 10px;
+        white-space: nowrap;
+      }
+    }
+  }

@@ -1,0 +1,187 @@
+.form-quick-login {
+    position: relative;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    &__remember {
+        margin-top: 10px;
+    }
+
+    &__action {
+        margin-top: 20px;
+
+        flex-grow: 1;
+    }
+
+    &__inputs {
+        display: flex;
+        align-items: center;
+
+        & > input {
+            width: 40px;
+            min-width: 40px;
+            height: 50px;
+            margin-right: 14px;
+            padding: 0;
+
+            font-size: 28px;
+            line-height: 30px;
+            text-align: center;
+            color: #515160;
+
+            background-color: #f4f6f9;
+
+            @include start-at("xl") {
+                width: 36px;
+                min-width: 36px;
+                height: 46px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &::-webkit-input-placeholder {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            &:-moz-placeholder {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            &:-ms-input-placeholder {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            &::placeholder {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            &:focus {
+                background-color: #fff;
+            }
+
+            &[type="number"]::-webkit-outer-spin-button,
+            &[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+
+            &[type="number"],
+            &[type="number"]:hover,
+            &[type="number"]:focus {
+                appearance: none;
+                -moz-appearance: textfield;
+            }
+        }
+    }
+
+    &__body {
+        &_line {
+            display: flex;
+            align-items: center;
+
+            & .form-quick-login__inputs > input {
+                width: 26px;
+                min-width: 26px;
+                height: 32px;
+                margin-right: 8px;
+
+                font-size: 22px;
+                line-height: 1;
+
+                &::-webkit-input-placeholder {
+                    font-size: 22px;
+                    line-height: 1;
+                }
+
+                &:-moz-placeholder {
+                    font-size: 22px;
+                    line-height: 1;
+                }
+
+                &:-ms-input-placeholder {
+                    font-size: 22px;
+                    line-height: 1;
+                }
+
+                &::placeholder {
+                    font-size: 22px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+
+    &__loader {
+        position: absolute;
+        top: 50%;
+
+        width: 100%;
+
+        transform: translateY(-50%);
+    }
+
+    &__textbefore {
+        margin-right: 8px;
+
+        font-size: 28px;
+        opacity: 0.6;
+    }
+
+    &__inner {
+        display: inline-flex;
+        flex-direction: column;    
+
+        transition: opacity 0.2s ease;
+    }
+
+    &.expect,
+    &.success,
+    &.error {
+        & .form-quick-login__inner {
+            opacity: 0.2;
+            pointer-events: none;
+        }
+    }
+
+    &.success {
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 3;
+
+            transform: translateX(-50%);
+
+            font-size: 70px;
+            color: var(--color_success);
+            font-family: 'Font Awesome 6 Pro';
+            font-weight: 900;
+
+            content: "\f00c";
+        }
+    }
+
+    &.error {
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 3;
+
+            transform: translateX(-50%);
+
+            font-size: 50px;
+            color: var(--color_danger);
+            font-family: 'Font Awesome 6 Pro';
+            font-weight: 900;
+
+            content: "\f06a";
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "open-sans-semibold";
+    font-display: swap;
+    src: local("open-sans-semibold"), local("open-sans-semibold"), url("open-sans-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}

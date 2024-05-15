@@ -1,0 +1,121 @@
+.connect-seller-step {
+  display: flex;
+
+  [data-position="start"] {
+
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    margin-right: 8px;
+    align-items: center;
+    flex-shrink: 0;
+
+    @include start-at("md") {
+      width: 48px;
+      margin-right: 16px;
+    }
+  }
+
+  &__check {
+    position: relative;
+    top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    font-weight: 500;
+
+    border-radius: 50%;
+    background: var(--color_success);
+
+    color: #fff;
+
+    @include start-at("md") {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    top: 28px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    color: #8f9194;
+    font-family: $font-family-medium;
+
+    border-radius: 50%;
+    background-color: var(--bg_noactive_line_seller);
+  }
+
+  &__check-icon {
+    font-size: 14px;
+
+    color: #fff;
+    font-weight: normal;
+
+    @include start-at("md") {
+      font-size: 16px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    top: 20px;
+
+    margin-bottom: -8px;
+    flex: 1;
+    width: 2px;
+
+    --start-color: var(--color_success);
+    --end-color: var(--bg_noactive_line_seller);
+
+    background-color: var(--bg_noactive_line_seller);
+    background-image: linear-gradient(180deg, var(--start-color), var(--end-color));
+
+
+    &_gray {
+      --start-color: var(--bg_noactive_line_seller);
+      --end-color: var(--bg_noactive_line_seller);
+    }
+
+    &_completed {
+      --start-color: var(--color_success);
+      --end-color: var(--color_success);
+    }
+
+    &_end {
+      background-image: none;
+      background-color: transparent;
+    }
+
+  }
+
+  &__blocks {
+    margin-bottom: 20px;
+    flex-grow: 1;
+
+    &_grid {
+      display: grid;
+      grid-gap: calc($grid-gap / 2);
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+
+      & .connect-seller-step-block {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

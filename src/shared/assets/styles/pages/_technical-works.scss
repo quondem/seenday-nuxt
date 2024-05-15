@@ -1,0 +1,112 @@
+.text-primary {
+  color: var(--color_secondary);
+}
+
+.technical-works {
+  height: 100%;
+  background-image: url(@/assets/images/pages/technical-works/bg-technical.svg?1);
+  background-position: 58% -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @include start-at(md) {
+    background-position: bottom center;
+  }
+
+  &__container {
+    max-width: 1470px * $rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: $grid-gap;
+    padding-right: $grid-gap;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+
+    @include start-at(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+      font-size: 24px * $rem;
+      text-transform: uppercase;
+
+      @include start-at(md) {
+        font-size: 30px * $rem;
+      }
+
+      @include start-at(lg) {
+        font-size: 33.75px * $rem;
+      }
+
+      @include start-at(xl) {
+        font-size: 45px * $rem;
+      }
+    }
+  }
+
+  &__img-block {
+    width: 80%;
+    padding-top: 50px * $rem;
+    align-items: flex-end;
+
+    @include start-at(md) {
+      order: 1;
+      padding-top: 0;
+      width: 30%;
+    }
+
+    @include start-at(xslg) {
+      width: 40%;
+    }
+
+    & img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__text-block {
+    @include start-at(md) {
+      order: 2;
+      padding-top: 0;
+      margin-top: -45px;
+      width: 70%;
+    }
+
+    @include start-at(xslg) {
+      margin-top: 0;
+      width: 60%;
+    }
+
+    & div {
+      max-width: 80%;
+    }
+  }
+
+  &__margin-top {
+    margin-top: 7px * $rem;
+
+    @include start-at(xslg) {
+      margin-top: 15px * $rem;
+    }
+  }
+}

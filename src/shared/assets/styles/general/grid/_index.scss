@@ -1,0 +1,24 @@
+@import "config";
+@import "column";
+@import "row";
+
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+  @include start-at($breakpoint-name) {
+    @include make-row($breakpoint-name);
+    @include make-column($breakpoint-name);
+  }
+
+  @if $breakpoint-name != "xs" {
+    @include start-at($breakpoint-name) {
+      .hidden-at-#{$breakpoint-name} {
+        display: none !important;
+      }
+    }
+
+    @include active-by($breakpoint-name) {
+      .hidden-by-#{$breakpoint-name} {
+        display: none !important;
+      }
+    }
+  }
+}

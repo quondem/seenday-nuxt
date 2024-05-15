@@ -1,0 +1,14 @@
+.connect-seller-steps {
+  // padding-top: 28px;
+  width: 100%;
+
+  @include start-at("lg") {
+    max-width: 100%;
+  }
+
+
+  @include start-at("xl") {
+    max-width: 900px;
+    width: 100%;
+  }
+}

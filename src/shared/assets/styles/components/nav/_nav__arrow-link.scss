@@ -1,0 +1,75 @@
+.nav {
+	&__toggle-sub {
+		position: absolute;
+		right: $padding-topnav;
+		top: 50%;
+
+		width: 24px;
+    	height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: $border-radius-nav;
+
+		transform: translateY(-50%);
+
+		&.active {
+			background-color: var(--bg_nav_active);
+			cursor: default;
+
+			&:before {
+				background-color: var(--background_active_line_navbar);
+			}
+		}
+	}
+
+	&__arrow-link {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+
+		color: var(--color_nav_arrow_icon);
+		border-radius: $border-radius-nav;
+		transition: background-color 0.12s, transform 0.2s;
+
+		cursor: pointer;
+
+		&::before {
+		    position: absolute;
+		    top: 0;
+		    left: -8px;
+
+		    height: 100%;
+		    width: 1px;
+
+		    content: "";
+		    background-color: transparent;
+
+		    transition: background-color 0.12s;
+
+			@include start-at("xslg") {
+				display: none;
+			}
+
+			@include start-at("xl") {
+				display: block;
+			}
+		}
+
+		@include start-at("xslg") {
+			opacity: 0;
+		}
+
+		@include start-at("xl") {
+			opacity: 1;
+		}
+
+		& i {
+			transition: transform 0.3s ease;
+		}
+	}
+}

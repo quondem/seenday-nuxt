@@ -1,0 +1,29 @@
+
+.nav {
+  &__item {
+    position: relative;
+
+    list-style: none;
+
+    transition: height 0.3s ease;
+
+    // добавляем отступы, если наведение на ссылку не во всю ширину контейнера
+    &_pd {
+      padding-left: $padding-topnav;
+      padding-right: $padding-topnav;
+      padding-bottom: 3px*$rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    &_indicators {
+      margin-top: auto;
+
+      & .nav__icon:hover {
+        background-color: var(--bg_hover_nav);
+      }
+    }
+  }
+}

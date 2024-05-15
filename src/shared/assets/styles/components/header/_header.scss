@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+  z-index: calc(var(--z-sticky) + 1);
+
+  grid-area: header;
+  display: grid;
+  grid-template-columns: calc(50% + 60px) auto;
+
+  background-color: var(--bg_header);
+
+  @media print {
+    display: none;
+  }
+
+  @include start-at("xslg") {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    grid-template-columns: $widthNavbar 1fr;
+    width: 100%;
+
+    background-color: var(--bg_header_desktop);
+  }
+}

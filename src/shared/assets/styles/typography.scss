@@ -1,0 +1,105 @@
+.text-7px,
+.text-7 {
+  font-size: 7px * $rem !important;
+}
+.text-8px,
+.text-8 {
+  font-size: 8px * $rem !important;
+}
+.text-9px,
+.text-9 {
+  font-size: 9px * $rem !important;
+}
+.text-10px,
+.text-10 {
+  font-size: 10px * $rem !important;
+}
+.text-11px,
+.text-11 {
+  font-size: 11px * $rem !important;
+}
+.text-12px,
+.text-12 {
+  font-size: 12px * $rem !important;
+}
+.text-13px,
+.text-13 {
+  font-size: 13px * $rem !important;
+}
+.text-14px,
+.text-14 {
+  font-size: 14px * $rem !important;
+}
+.text-15px,
+.text-15 {
+  font-size: 15px * $rem !important;
+}
+.text-16px,
+.text-16 {
+  font-size: 16px * $rem !important;
+}
+.text-17px,
+.text-17 {
+  font-size: 17px * $rem !important;
+}
+.text-18px,
+.text-18 {
+  font-size: 18px * $rem !important;
+}
+.text-19px,
+.text-19 {
+  font-size: 19px * $rem !important;
+}
+.text-20px,
+.text-20 {
+  font-size: 20px * $rem !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-24 {
+  font-size: 24px * $rem !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-bold,
+.bold,
+text-bold {
+  font-family: $font-family-medium !important;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text_l-h {
+  text-decoration: line-through;
+}
+
+.word-break_break-all {
+  word-break: break-all !important;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.text-strike {
+  text-decoration: line-through;
+}

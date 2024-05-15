@@ -1,0 +1,22 @@
+.discount {
+    
+    &[data-color="red"] {
+        background-color: var(--bg_discount);
+        color: var(--color_discount);
+    }
+
+    &[data-color="yellow"] {
+        background-color: var(--tinkoff-yellow);
+        color: var(--tinkoff-black);
+    }
+
+    &[data-color="orange"] {
+        background-color: var(--color_orange);
+        color: var(--color_white);
+    }
+
+    &[data-color="light-purple"] {
+        color: var(--color_notice_info);
+        background-color: var(--bg_notice_info);
+    }
+}

@@ -1,0 +1,39 @@
+.gallery-gutter {
+    --photo-spacing-small: 4px;
+    --photo-spacing-medium: 8px;
+    --photo-spacing-large: 16px;
+}
+
+.gallery-photos-item {
+    position: absolute;
+
+    padding: calc(var(--photo-spacing) / 2);
+
+    &__inner {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        background-color: var(--color-primary-dark-3);
+
+        cursor: pointer;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        opacity: 1;
+        border: none;
+
+        transition: opacity 0.2s ease-in;
+
+        &[data-src] {
+            opacity: 0;
+        }
+    }
+}

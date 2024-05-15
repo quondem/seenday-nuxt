@@ -1,0 +1,32 @@
+.acquiring {
+  grid-column: 1 / span 2;
+  max-width: 900px;
+  width: 100%;
+
+  & .link {
+    display: inline-flex;
+  }
+
+  &__inner {
+    padding-top: 32px * $rem;
+
+    @include start-at("md") {
+      padding-top: 16px * $rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-family: $font-family-medium;
+
+    @include start-at("xslg") {
+      font-size: 25px;
+    }
+  }
+}
+
+@import "~/shared/assets/styles/components/seller/connect-seller-steps.scss";
+@import "~/shared/assets/styles/components/seller/connect-seller-step.scss";
+@import "~/shared/assets/styles/components/seller/connect-seller-step-block.scss";

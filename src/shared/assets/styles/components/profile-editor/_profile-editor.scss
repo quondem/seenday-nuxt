@@ -1,0 +1,297 @@
+.wrapper-users-editor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px*$rem;
+
+    grid-column: 1 / span 2;
+
+    @include start-at("lg") {
+        grid-template-columns: 1fr 195px;
+        grid-column: 2 / span 1;
+    }
+
+    @include start-at("xl") {
+        grid-template-columns: 1fr 245px;
+    }
+}
+
+wrapper-info-editor {
+    position: relative;
+
+    display: block;
+    padding-bottom: 30px*$rem;
+}
+
+//Блок редактора профиля
+.info-editor {
+    display: block;
+
+    & wrapper-notice {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__notice-results {
+        margin-top: 5px*$rem;
+    }
+
+    &.grid-2 {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 1fr;
+        
+        grid-gap: 15px*$rem;
+        background-color: transparent;
+        
+        @include start-at("xl2") {
+            grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+        }
+    }
+
+    &__content {
+        position: relative;
+
+        display: grid;
+        grid-row-gap: 15px*$rem;
+        padding-left: 15px*$rem;
+        padding-right: 15px*$rem;
+        margin: 20px 0;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include start-at("xl") {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+
+        & .button {
+            height: 40px;
+            width: 100%;
+
+            @include start-at("md") {
+                width: auto;
+            }
+        }
+    }
+
+    &__title-page {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+// Строки редактора профиля
+.pedit-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto max-content;
+    grid-row-gap: 5px*$rem;
+    align-items: center;
+
+    @include start-at("lg"){
+        grid-template-columns: 25% 1fr;
+        grid-template-row: auto;
+        grid-column-gap: 15px*$rem;
+        padding: 0;
+
+    }
+
+    &__input {
+        height: 35px;
+        width: 100%;
+        padding-left: 10px*$rem;
+        padding-right: 10px*$rem;
+
+        text-align: left;
+        color: var(--color_profile_editor_input);
+
+        border: 1px solid var(--border_profile_editor_input);
+
+        @include start-at("lg") {
+            max-width: 300px;
+            width: 100%;
+        }
+
+        &.fix-width {
+            width: calc(100% - 50px);
+            margin-left: 10px;
+
+            @include start-at("lg") {
+                max-width: 250px;
+            }
+        }
+    }
+
+    &__line {
+        display: flex;
+        align-items: center;
+    }
+
+    &__textarea {
+        @include start-at("lg") {
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+
+    &__label {
+
+        @include start-at("lg") {
+            justify-self: flex-end;
+        }
+    }
+
+    &__wrap{
+        position: relative;
+
+        width: 100%;
+
+        @include start-at("lg"){
+            width: 300px;
+        }
+
+        span {
+            position: relative;
+            display: block;
+
+            &::before {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                
+                font-size: 16px;
+                content: '\f107';
+                font-family: 'Font Awesome 5 Pro';
+    
+                color: var(--color_pedit_row);
+    
+                cursor: pointer;
+            }
+    
+        }
+
+        input {
+            cursor: default;
+        }
+    }
+}
+
+//контейнер для выпадающего списка
+.pedit-list {
+    &.d_n {
+        display: none;
+    }
+
+    &__select-list {    
+        position: static;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        margin-top: 5px*$rem;
+
+        box-shadow: var(--shadow_pedit_list_select);
+        border: 1px solid var(--border_pedit_list_select);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        & a {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        @include start-at("lg") {
+            position: absolute;
+
+            margin: -1px 0;
+        }
+    }
+}
+
+.wrapper-iedit-list {
+    display: none;
+
+    @include start-at("lg") {
+        position: fixed;
+        right: 30px;
+    
+        width: 180px;
+        display: block;
+    }
+
+    @include start-at("xl") {
+        width: 230px;
+    }
+}
+
+//меню редактора справа
+.iedit-sub-list {
+    padding: 4px 0;
+ 
+    &__item {
+        display: flex;
+        align-items: center;
+
+        white-space: nowrap;
+
+        padding: 7px 5px 7px 20px;
+        
+        user-select: none;
+        outline: none;
+        cursor: pointer;
+        color: inherit;
+
+        font-family: $font-family-medium;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: none;
+            background-color: var(--bg_iedit_sub_list_hover);
+        }
+
+        &[data-select="1"] {
+            border-left: 2px solid var(--border_iedit_sub_list_select);
+            background-color: var(--bg_iedit_sub_list_select);
+
+            cursor: default;
+        }
+    }
+}
+
+// Нотисы для профиля
+
+wrapper-notice[data-type="profile"] {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 45%;
+    opacity: 0;
+    z-index: 444;
+
+    visibility: hidden;
+
+    &[data-show="1"] {
+        animation-name: showNotice;
+     }
+
+    @include start-at("md") {
+        width: 70%;
+    }
+
+    @include start-at("xslg") {
+        width: 60%;
+    }
+
+    @include start-at("xl") {
+        width: 60%;
+    }
+}

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "pt-sans-regular";
+    font-display: swap;
+    src: local("pt-sans-regular"), local("pt-sans-regular"), url("pt-sans-regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,93 @@
+.tag {
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid transparent;
+
+  color: var(--color_btn);
+
+  transition-property: color, background-color;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+
+  &_clickable {
+    cursor: pointer;
+  }
+
+  &_small {
+    padding: 2px 5px;
+  }
+
+  &_purple-reverse {
+    background-color: var(--bg_btn_purple_reverse);
+    color: var(--color_btn_purple_reverse);
+  }
+
+  &_purple-reverse:not(&_nohover) {
+    &:hover {
+      background-color: #d7dfe9;
+    }
+  }
+
+  &_orange {
+    background-color: var(--bg_btn_orange);
+    color: var(--color_btn_orange);
+  }
+
+  &_orange:not(&_nohover) {
+    &:hover {
+      background-color: (--bg_hover_btn_orange);
+    }
+  }
+
+  &_light-blue {
+    background-color: var(--bg_btn_lightness_blue);
+    color: var(--color_btn_lightness_blue);
+  }
+
+  &_light-blue:not(&_nohover) {
+    &:hover {
+      background-color: var(--bg_hover_btn_lightness_blue);
+    }
+  }
+
+  &_green {
+    background-color: var(--bg_btn_secondary);
+  }
+
+  &_green:not(&_nohover) {
+    &:hover {
+      background-color: (--bg_hover_btn_secondary);
+    }
+  }
+
+  &_purple {
+    background-color: var(--bg_btn_primary);
+
+    &:hover {
+      background-color: var(--bg_hover_btn_primary);
+    }
+  }
+
+  &_purple:not(&_nohover) {
+    &:hover {
+      background-color: var(--bg_hover_btn_primary);
+    }
+  }
+
+  &_blue {
+    background-color: var(--bg_btn_blue);
+    color: var(--color_btn_blue);
+
+    &:hover {
+      background-color: var(--bg_hover_btn_blue);
+    }
+  }
+
+  &_blue:not(&_nohover) {
+    &:hover {
+      background-color: var(--bg_hover_btn_primary);
+    }
+  }
+}

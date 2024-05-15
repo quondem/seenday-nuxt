@@ -1,0 +1,197 @@
+.contract {
+  &__inner {
+    padding-top: 16px * $rem;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-family: $font-family-medium;
+
+    @include start-at("xslg") {
+      font-size: 25px;
+    }
+  }
+
+  &__items {
+    margin-top: 32px;
+
+    @include start-at("xslg") {
+      display: flex;
+    }
+  }
+
+  &__items-inner {
+    width: 100%;
+
+    @include start-at("xslg") {
+      padding-right: 24px;
+      max-width: 1000px;
+
+      border-right: 1px solid var(--border_color_light);
+    }
+  }
+
+  &__items-control {
+    margin-top: 24px;
+
+    @include start-at("xslg") {
+      padding-left: 24px;
+      margin-top: 0;
+      max-width: 304px;
+      width: 100%;
+    }
+  }
+
+  &__items-control-inner {
+    @include start-at("xslg") {
+      position: sticky;
+      top: 10px;
+    }
+  }
+}
+
+.contract-item {
+  margin-bottom: 20px;
+
+  background: #fff;
+  padding: 30px;
+  border-radius: 0.1875rem;
+  box-shadow: var(--box_shadow_block);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-family: $font-family-medium;
+    font-size: 18px;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+}
+
+.contract-item-form {
+  display: grid;
+  grid-gap: 16px;
+
+  &__item-inner {
+    display: grid;
+
+    grid-gap: 20px;
+
+    @include start-at("xslg") {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &_grid-2 {
+      @include start-at("xslg") {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__item {
+    &_full {
+      @include start-at("xslg") {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &_grid-1-1 {
+      @include start-at("xslg") {
+        grid-column: 1 / span 1;
+      }
+    }
+
+    &_grid-2-2 {
+      @include start-at("xslg") {
+        grid-column: 2 / span 1;
+      }
+    }
+
+    &_grid-2-3 {
+      @include start-at("xslg") {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &_grid-1-2 {
+      @include start-at("xslg") {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &_grid-3-3 {
+      @include start-at("xslg") {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+
+  &__label {
+    margin-bottom: 6px;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    & .checkbox {
+      margin-right: 10px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  &__item-phone {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      border: 1px solid var(--border_color);
+      border-right: none;
+
+      background-color: #e8e8e8;
+    }
+
+    & .input-phone {
+      flex-grow: 1;
+      padding-left: 60px;
+    }
+
+    & .input:last-child {
+      margin-left: 10px;
+      width: 60px;
+    }
+  }
+}

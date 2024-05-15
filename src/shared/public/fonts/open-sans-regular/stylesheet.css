@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "open-sans-regular";
+    font-display: swap;
+    src: local("open-sans-regular"), local("open-sans-regular"), url("open-sans-regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}

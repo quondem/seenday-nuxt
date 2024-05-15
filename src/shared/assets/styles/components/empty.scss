@@ -1,0 +1,14 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    max-width: 180px;
+
+    @include active-by("md") {
+      max-width: 150px;
+    }
+  }
+}

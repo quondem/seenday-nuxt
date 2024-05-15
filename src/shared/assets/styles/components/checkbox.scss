@@ -1,0 +1,145 @@
+.ui-checkbox {
+  &.blocked {
+    color: #afafb5;
+
+    & .ui-checkbox__label {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding-left: 24px;
+
+    &::before {
+      cursor: pointer;
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 11px;
+      height: 24px;
+    }
+
+    &_checked::before {
+      font-family: "Font Awesome 6 Pro";
+
+      color: var(--color_check_checkbox);
+      font-weight: bold;
+
+      content: "\f00c";
+    }
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+
+    z-index: -1;
+    visibility: hidden;
+    display: none;
+  }
+
+  &_inline {
+    display: inline-block;
+  }
+
+  &_switch {
+    display: inline-flex;
+    align-items: center;
+
+    &.blocked .ui-checkbox__label {
+      &::before {
+        background-color: #ebeef3;
+
+        content: "";
+      }
+    }
+
+    .ui-checkbox__label {
+      padding-left: 38px;
+    }
+
+    .ui-checkbox__label::before {
+      top: calc(50% - 10px);
+      width: 30px;
+      height: 20px;
+      background-color: #d7dde6;
+      border: none;
+      border-radius: 10px;
+      background-image: none;
+    }
+
+    .ui-checkbox__label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 4px;
+      top: calc(50% - 6px);
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border: none;
+      border-radius: 50%;
+
+      transition: all 0.2s ease;
+    }
+
+    .ui-checkbox__label_control-top::before {
+      top: 0;
+    }
+
+    .ui-checkbox__label_control-top::after {
+      top: 4px;
+    }
+
+    .ui-checkbox__label_checked::before {
+      background-color: var(--color_green);
+    }
+
+    .ui-checkbox__label_checked::after {
+      left: 14px;
+    }
+  }
+
+  &_square {
+    &.blocked .ui-checkbox__label {
+      &_checked::before {
+        content: "\f00c";
+      }
+    }
+
+    .ui-checkbox__label {
+      padding-left: 32px;
+
+      @include start-at("lg") {
+        padding-left: 36px;
+
+        &:not(&_checked):hover::before {
+          background: #f6f6f8;
+        }
+      }
+    }
+
+    .ui-checkbox__label::before {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #d8d8d8;
+      border-radius: $border-radius;
+      background-color: #fff;
+    }
+  }
+}

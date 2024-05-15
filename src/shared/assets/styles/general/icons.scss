@@ -1,0 +1,1609 @@
+// гамбургер
+.icon-bars {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-bars);
+  }
+}
+.fa-image {
+  &:before {
+    content: fa-content($fa-var-image);
+  }
+}
+.fa-file-user {
+  &:before {
+    content: fa-content($fa-var-file-user);
+  }
+}
+// stert, time, часы, старт, песочные
+.fa-hourglass-start {
+  &:before {
+    content: fa-content($fa-var-hourglass-start);
+  }
+}
+
+// change, switch, сменить, переместить
+.fa-share-square {
+  &:before {
+    content: fa-content($fa-var-share-square);
+  }
+}
+
+// Перезагрузка, Обновление, reload, update
+.fa-redo-alt {
+  &:before {
+    content: fa-content($fa-var-redo-alt);
+  }
+}
+
+// Подметать, очистить, broom, clear
+.fa-broom {
+  &:before {
+    content: fa-content($fa-var-broom);
+  }
+}
+
+// Настройки, шестеренка, settings
+.fa-cog {
+  &:before {
+    content: fa-content($fa-var-cog);
+  }
+}
+
+.fa-user {
+  &:before {
+    content: fa-content($fa-var-user);
+  }
+}
+
+.fa-tools {
+  &:before {
+    content: fa-content($fa-var-tools);
+  }
+}
+.icon-dolly-flatbed-alt {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-dolly-flatbed-alt);
+  }
+}
+
+.fa-thumbs-down {
+  &:before {
+    content: fa-content($fa-var-thumbs-down);
+  }
+}
+.fa-thumbs-up {
+  &:before {
+    content: fa-content($fa-var-thumbs-up);
+  }
+}
+.fa-cloud-upload {
+  &:before {
+    content: fa-content($fa-var-cloud-upload);
+  }
+}
+.fa-truck {
+  &:before {
+    content: fa-content($fa-var-truck);
+  }
+}
+.fa-briefcase {
+  &:before {
+    content: fa-content($fa-var-briefcase);
+  }
+}
+
+.icon-hdd {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-hdd);
+  }
+}
+.icon-file-signature {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-file-signature);
+  }
+}
+.icon-address-card {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-address-card);
+  }
+}
+.icon-box-open {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-box-open);
+  }
+}
+.icon-compact-disc {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-compact-disc);
+  }
+}
+.fa-arrow-to-bottom {
+  &:before {
+    content: fa-content($fa-var-arrow-to-bottom);
+  }
+}
+.fa-gem {
+  minusPercent &:before {
+    content: fa-content($fa-var-gem);
+  }
+}
+.icon-cash-register {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-cash-register);
+  }
+}
+
+// Банк
+.icon-piggy-bank {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-piggy-bank);
+  }
+}
+
+.icon-receipt {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-receipt);
+  }
+}
+
+.fa-star-half-alt {
+  &:before {
+    content: fa-content($fa-var-star-half-alt);
+  }
+}
+.fa-eye {
+  &:before {
+    content: fa-content($fa-var-eye);
+  }
+}
+
+//
+.icon-user-plus {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-user-plus);
+  }
+}
+
+.fa-edit {
+  &:before {
+    content: fa-content($fa-var-edit);
+  }
+}
+.fa-dolly {
+  &:before {
+    content: fa-content($fa-var-dolly);
+  }
+}
+.fa-inbox-out {
+  &:before {
+    content: fa-content($fa-var-inbox-out);
+  }
+}
+.fa-sync-alt {
+  &:before {
+    content: fa-content($fa-var-sync-alt);
+  }
+}
+.fa-at {
+  &:before {
+    content: fa-content($fa-var-at);
+  }
+}
+
+.fa-crown {
+  &:before {
+    content: fa-content($fa-var-crown);
+  }
+}
+.fa-exclamation-circle {
+  &:before {
+    content: fa-content($fa-var-exclamation-circle);
+  }
+}
+.fa-check-circle {
+  &:before {
+    content: fa-content($fa-var-check-circle);
+  }
+}
+.fa-flag-alt {
+  &:before {
+    content: fa-content($fa-var-flag-alt);
+  }
+}
+.fa-exclamation-triangle {
+  &:before {
+    content: fa-content($fa-var-exclamation-triangle);
+  }
+}
+.fa-cash-register {
+  &:before {
+    content: fa-content($fa-var-cash-register);
+  }
+}
+
+.fa-file-image {
+  &:before {
+    content: fa-content($fa-var-file-image);
+  }
+}
+
+//профиль иконка
+.icon-user-astronaut {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-user-astronaut);
+  }
+}
+
+//иконка id
+.fa-id-badge {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-id-badge);
+  }
+}
+
+// стрелка в профиле в шапке
+.fa-angle-down {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-angle-down);
+  }
+}
+
+// Мои фотосессии
+.icon-camera-retro {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-camera-retro);
+  }
+}
+
+.fa-lightbulb-on {
+  &:before {
+    content: fa-content($fa-var-lightbulb-on);
+  }
+}
+
+// мои проекты один день
+.fa-puzzle-piece {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-puzzle-piece);
+  }
+}
+
+// album, cap, альбом, шляпа
+.fa-graduation-cap {
+  &:before {
+    content: fa-content($fa-var-graduation-cap);
+  }
+}
+// school, школа
+.fa-school {
+  &:before {
+    content: fa-content($fa-var-school);
+  }
+}
+// baby, kinder, ребенок, детский сад
+.fa-baby {
+  &:before {
+    content: fa-content($fa-var-baby);
+  }
+}
+
+// Мои заказы
+.icon-file-invoice-dollar {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-file-invoice-dollar);
+  }
+}
+
+// мои фотографии
+.fa-images {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-images);
+  }
+}
+
+// Назад на софит
+
+.fa-hand-point-left {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-hand-point-left);
+  }
+}
+
+// Мы в вк
+.fa-vk {
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-vk);
+  }
+}
+
+// Мы в инсте
+.fa-instagram {
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-instagram);
+  }
+}
+
+// В сортировке мои заказы
+.fa-ellipsis-v {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-ellipsis-v);
+  }
+}
+
+// В фильтрах сортировки мои заказы
+.fa-circle {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-circle);
+  }
+}
+
+// В таблице знак рубря
+.fa-ruble-sign {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-ruble-sign);
+  }
+}
+
+// В таблице знак рубря
+.fa-trash {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-trash);
+  }
+}
+
+// крестик закрыть
+.fa-times {
+  &::before {
+    content: fa-content($fa-var-xmark);
+  }
+}
+.fa-xmark {
+  &::before {
+    content: fa-content($fa-var-xmark);
+  }
+}
+
+// Знак сортировки в заказах
+.fa-gem {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-gem);
+  }
+}
+
+// Иконка в кнопке наверх
+.fa-arrow-up {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-arrow-up);
+  }
+}
+
+// Иконка в меню "заказы клиентов
+.fa-money-bill-alt {
+  &::before {
+    content: fa-content($fa-var-money-bill-alt);
+  }
+}
+
+// Иконка в открытие сортировки заказов
+.fa-filter {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-filter);
+  }
+}
+
+// Иконка поиска
+.fa-search {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-search);
+  }
+}
+
+// Иконка для календаря в ордере заказов для менеджеров
+.fa-calendar-alt {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-calendar-alt);
+  }
+}
+
+// Иконка страницы фотосессии менеджеров
+.fa-chart-bar {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-chart-bar);
+  }
+}
+
+.icon-people-group {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-people-group);
+  }
+}
+
+// Иконка пользователей в левом меню навигации
+.icon-users {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-users);
+  }
+}
+
+// Иконка информация в таблице пользователей
+.fa-info-circle {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-info-circle);
+  }
+}
+// Заблокирован пользователь иконка
+.fa-user-lock {
+  &::before {
+    content: fa-content($fa-var-user-lock);
+  }
+}
+
+// Разблокирован пользователь иконка
+.fa-unlock {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-unlock);
+  }
+}
+
+// lock, closed, закрыт, замок
+.fa-lock {
+  &::before {
+    content: fa-content($fa-var-lock);
+  }
+}
+// unlock, open, открыт, замок
+.fa-unlock {
+  &::before {
+    content: fa-content($fa-var-unlock);
+  }
+}
+// percent, discount, процент, скидка
+.fa-percent {
+  &::before {
+    content: fa-content($fa-var-percent);
+  }
+}
+.fa-percentage {
+  &::before {
+    content: fa-content($fa-var-percentage);
+  }
+}
+
+// fire, огонь
+.fa-fire {
+  &::before {
+    content: fa-content($fa-var-fire);
+  }
+}
+
+// stop, close, остановить, закрыть
+.fa-hand-paper {
+  &::before {
+    content: fa-content($fa-var-hand-paper);
+  }
+}
+.fa-stop {
+  &::before {
+    content: fa-content($fa-var-stop);
+  }
+}
+
+// Удалить пользователя
+.fa-user-times {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-user-times);
+  }
+}
+// Восстановить пользователя
+.fa-user-check {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-user-check);
+  }
+}
+// Удаление
+// .fa-trash-can {
+//   @extend .fas;
+
+//   &::before {
+//     content: fa-content($fa-trash-can);
+//   }
+// }
+// Сбросить пароль
+.fa-redo-alt {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-redo-alt);
+  }
+}
+
+// Плюс показать цены в фото на печать
+// plus, плюс
+.fa-plus {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-plus);
+  }
+}
+.fa-plus-square {
+  &::before {
+    content: fa-content($fa-var-plus-square);
+  }
+}
+.fa-add {
+  @extend .far;
+
+  &::before {
+    content: fa-content(\2b);
+  }
+}
+
+.fa-minus {
+  &::before {
+    content: fa-content($fa-var-minus);
+  }
+}
+
+// Удалить строку в таблице создания прайса
+.fa-trash-alt {
+  &::before {
+    content: fa-content($fa-var-trash-alt);
+  }
+}
+
+// выплата, payout
+.icon-envelope-open-dollar {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-envelope-open-dollar);
+  }
+}
+
+// Иконка для таблицы прайса, загрузить img
+.fa-cloud-upload-alt {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-cloud-upload-alt);
+  }
+}
+
+// иконка отключенный прайс
+.fa-eye-slash {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-eye-slash);
+  }
+}
+
+// иконка активный прайс
+.fa-eye {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-eye);
+  }
+}
+
+// Иконка редактировать прайс
+.fa-edit {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-edit);
+  }
+}
+
+// Иконка редактировать прайс
+.fa-book {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-book);
+  }
+}
+
+// Иконка для перетаскивания блоков типов раздела в альбомах
+.fa-arrows {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-arrows);
+  }
+}
+
+// Ассистент
+.fa-jenkins {
+  &::before {
+    content: fa-content($fa-var-jenkins);
+  }
+}
+
+.fa-pen {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-pen);
+  }
+}
+
+//иконка для прайса
+.icon-money-check {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-money-check);
+  }
+}
+
+//иконка для помощника в навигации
+.fa-optin-monster {
+  @extend .fab;
+
+  &::before {
+    content: fa-content($fa-var-optin-monster);
+  }
+}
+//иконка для пустой картинки
+.fa-empty-set {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-empty-set);
+  }
+}
+
+//иконка для сортироваки длоков
+.fa-sort {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-sort);
+  }
+}
+
+// Иконка для элемента replace
+.fa-check {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-check);
+  }
+}
+
+// Иконка для диска
+.fa-archive {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-archive);
+  }
+}
+
+.fa-angle-down {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-angle-down);
+  }
+}
+.fa-angle-up {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-angle-up);
+  }
+}
+
+.icon-seller {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-user-tie);
+  }
+}
+
+.icon-sign-out {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-sign-out);
+  }
+}
+
+.fa-cog {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-cog);
+  }
+}
+
+.indicators-exclamation {
+  @extend .fas;
+  z-index: 2;
+
+  font-size: 16px;
+
+  &::before {
+    content: fa-content($fa-var-exclamation-circle);
+  }
+
+  &[data-icon-color="yellow"] {
+    color: var(--color_indicators_warn);
+  }
+
+  &[data-icon-color="red"] {
+    color: var(--color_indicators_danger);
+  }
+
+  &[data-show="0"] {
+    display: none;
+  }
+
+  &[data-show="1"] {
+    display: block;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 20px;
+
+  // transition: all 0.3s ease;
+
+  &_small {
+    font-size: 14px;
+  }
+}
+
+.icon-question {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-question);
+  }
+}
+
+.icon-question-circle {
+  @extend .far;
+
+  cursor: pointer;
+
+  &:hover {
+    color: var(--bg_hover_icon_circle);
+  }
+
+  &::before {
+    content: fa-content($fa-var-question-circle);
+  }
+}
+
+.icon-folder {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-folder);
+  }
+}
+
+.icon-arrow-down {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-long-arrow-down);
+  }
+}
+
+.icon-right {
+  margin-left: 8px;
+}
+
+.icon-left {
+  margin-right: 8px;
+}
+
+.icon-grey {
+  color: var(--bg_icon_circle);
+}
+
+.icon-copy {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-clone);
+  }
+}
+
+.icon-heart {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-heart);
+  }
+}
+
+.icon-full-heart {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-heart);
+  }
+}
+
+.icon-share {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-share);
+  }
+}
+
+.icon-bars {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-bars);
+  }
+}
+
+.icon-close {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-close);
+  }
+}
+
+.icon-expand {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-expand);
+  }
+
+  &[data-active="1"] {
+    &::before {
+      content: fa-content($fa-var-compress);
+    }
+  }
+}
+
+.icon-compress {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-compress);
+  }
+}
+
+.icon-glass-plus {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-magnifying-glass-plus);
+  }
+}
+
+.icon-glass-minus {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-magnifying-glass-minus);
+  }
+}
+
+.icon-down {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-angle-down);
+  }
+}
+
+.icon-plus {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-plus);
+  }
+}
+
+.icon-minus {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-minus);
+  }
+}
+
+.icon-download {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-download);
+  }
+}
+
+.icon-horizontal {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-block-brick);
+  }
+}
+
+.icon-vertical {
+  @extend .fas;
+
+  &::before {
+    display: block;
+
+    transform: rotate(90deg);
+
+    content: fa-content($fa-var-block-brick);
+  }
+}
+
+.icon-miniatures {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-grid);
+  }
+}
+
+.icon-folder {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-folder);
+  }
+}
+
+.icon-handshake {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-handshake);
+  }
+}
+
+.icon-broom {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-broom);
+  }
+}
+
+.icon-rotate-right {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-rotate-right);
+  }
+}
+
+.icon-circle-info {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-circle-info);
+  }
+}
+
+.icon-lightbulb-on {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-lightbulb-on);
+  }
+}
+
+.icon-search {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-search);
+  }
+}
+
+.icon-times {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-times);
+  }
+}
+
+.icon-exclamation-circle {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-exclamation-circle);
+  }
+}
+
+.icon-check-circle {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-check-circle);
+  }
+}
+
+.icon-hourglass-start {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-hourglass-start);
+  }
+}
+
+.icon-xmark {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-xmark);
+  }
+}
+
+.icon-angle-down {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-angle-down);
+  }
+}
+
+.icon-trash-alt {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-trash-alt);
+  }
+}
+
+.icon-trash-alt-regular {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-trash-alt);
+  }
+}
+
+.icon-ellipsis-v {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-ellipsis-v);
+  }
+}
+
+.icon-check {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-check);
+  }
+}
+
+.icon-camera {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-camera);
+  }
+}
+
+.icon-graduation-cap {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-graduation-cap);
+  }
+}
+
+.icon-child {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-child);
+  }
+}
+
+.icon-book-open-cover {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-book-open-cover);
+  }
+}
+
+.icon-calendar-alt {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-calendar-alt);
+  }
+}
+
+.icon-arrows {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-arrows);
+  }
+}
+
+.icon-sort {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-sort);
+  }
+}
+
+.icon-edit {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-edit);
+  }
+}
+
+.icon-pen {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-pen);
+  }
+}
+
+.icon-cloud-upload-alt {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-cloud-upload-alt);
+  }
+}
+
+.icon-cog {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-cog);
+  }
+}
+
+.icon-baby {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-baby);
+  }
+}
+
+.icon-redo-alt {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-redo-alt);
+  }
+}
+
+.icon-school {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-school);
+  }
+}
+
+.icon-graduation-cap {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-graduation-cap);
+  }
+}
+
+.icon-cloud-upload {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-cloud-upload);
+  }
+}
+
+.icon-lock {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-lock);
+  }
+}
+
+.icon-unlock {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-unlock);
+  }
+}
+
+.icon-percent {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-percent);
+  }
+}
+
+.icon-ruble {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-ruble-sign);
+  }
+}
+
+.icon-hand-paper {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-hand-paper);
+  }
+}
+
+.icon-share-square {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-share-square);
+  }
+}
+
+.icon-arrow-to-bottom {
+  @extend .far;
+
+  &:before {
+    content: fa-content($fa-var-arrow-to-bottom);
+  }
+}
+
+.icon-arrow-up {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-arrow-up);
+  }
+}
+
+.icon-image {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-image);
+  }
+}
+
+.icon-eye {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-eye);
+  }
+}
+
+.icon-eye-slash {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-eye-slash);
+  }
+}
+
+.icon-money-bill-alt {
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-money-bill-alt);
+  }
+}
+
+.icon-error-image {
+  @extend .fal;
+
+  &::before {
+    content: fa-content($fa-var-image);
+  }
+}
+
+.icon-arrow-bottom {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-arrow-to-bottom);
+  }
+}
+
+.icon-regular-close {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-close);
+  }
+}
+
+.icon-file-image {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-file-image);
+  }
+}
+
+.icon-cloud-upload-alt {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-cloud-upload-alt);
+  }
+}
+
+.icon-filter {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-filter);
+  }
+
+  &__regular {
+    @extend .far;
+  }
+}
+
+.icon-telegram {
+  @extend .fab;
+
+  &::before {
+    content: fa-content($fa-var-telegram);
+  }
+}
+
+.icon-youtube {
+  @extend .fab;
+
+  &::before {
+    content: fa-content($fa-var-youtube);
+  }
+}
+
+.icon-vk {
+  @extend .fab;
+
+  &::before {
+    content: fa-content($fa-var-vk);
+  }
+}
+
+.icon-arrow-down-to-line {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-arrow-down-to-line);
+  }
+}
+
+.icon-file-excel {
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-file-excel);
+  }
+}
+
+.icon-gift {
+  @extend .fas;
+
+  &::after {
+    content: fa-content($fa-var-gift);
+  }
+
+  &.order {
+    color: var(--color_orange);
+  }
+
+  &.common {
+    color: #90f00c;
+  }
+
+  &.opacity {
+    opacity: 0.3;
+  }
+
+  &_order {
+    --fa-primary-color: #ff2222;
+    --fa-primary-opacity: 1;
+
+    @extend .fad;
+
+    &::before {
+      content: fa-content($fa-var-gift);
+    }
+  }
+}
+
+.icon-crown {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-crown);
+  }
+}
+
+.icon-thumbs-down {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-thumbs-down);
+  }
+}
+
+.icon-thumbs-up {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-thumbs-up);
+  }
+}
+
+.icon-briefcase {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-briefcase);
+  }
+}
+
+.icon-truck {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-truck);
+  }
+}
+
+.icon-sync-alt {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-sync-alt);
+  }
+}
+
+.icon-exclamation-triangle {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-exclamation-triangle);
+  }
+}
+
+.icon-cash-register {
+  @extend .far;
+
+  &::before {
+    content: fa-content($fa-var-cash-register);
+  }
+}
+
+.icon-gift-duo {
+  @extend .fad;
+
+  &::before {
+    content: fa-content($fa-var-gift);
+  }
+
+  &::after {
+    content: "\f06b\f06b";
+  }
+
+  --fa-primary-color: #ff2222;
+  --fa-primary-opacity: 1;
+  --fa-secondary-opacity: 1;
+
+  &__order {
+    --fa-secondary-color: var(--color_orange);
+  }
+
+  &__common {
+    --fa-secondary-color: #90f00c;
+  }
+
+  &__opacity {
+    --fa-secondary-opacity: 0.4;
+    --fa-primary-opacity: 0.4;
+  }
+}

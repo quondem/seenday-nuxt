@@ -1,0 +1,71 @@
+.multitaskinput {
+  &__wrapper {
+    display: flex;
+    overflow: hidden;
+
+    &[multitaskinput_period_1] {
+      align-items: center;
+      box-sizing: border-box;
+      box-shadow: var(--box_shadow_block);
+      border-radius: 0.1875rem;
+      padding: 0 13px 0 13px;
+      line-height: 1.1;
+      height: 2.1875rem;
+      color: var(--color_label);
+
+      // border: 1px solid #fff;
+      // box-shadow: var(--box_shadow_block);
+
+      &:focus-within {
+        box-shadow: var(--hover_block);
+        color: var(--color_input);
+      }
+      &:hover {
+        color: var(--color_input);
+      }
+    }
+
+    &-content {
+      flex: 1;
+      &[multitaskinput_period_1] {
+      }
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &[multitaskinput_period_1] {
+        padding-left: 13px;
+        background-color: #fff;
+      }
+    }
+  }
+  &__input {
+    border: solid transparent;
+    border: 70px;
+    width: 100%;
+    outline: 0;
+    appearance: none;
+    word-break: keep-all;
+    padding: 0;
+    &[multitaskinput_period_1] {
+      height: 2.1875rem;
+    }
+  }
+
+  // & [multitaskinput_period_1] {
+  //   width: 200px;
+  //   &__wrapper {
+  //     border: 1px solid black;
+
+  //     &-content {
+  //       flex: 1;
+  //     }
+  //     &-icon {
+  //     }
+  //   }
+  //   &__input {
+  //   }
+  // }
+}

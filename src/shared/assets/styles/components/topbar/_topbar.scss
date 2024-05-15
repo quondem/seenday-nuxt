@@ -1,0 +1,180 @@
+.topbar {
+  position: relative;
+  z-index: calc(var(--z-sticky) + 1);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--bg_top_panel);
+
+  @include start-at("xslg") {
+    display: grid;
+    grid-template-columns: repeat(3, auto) 1fr;
+    grid-column-gap: $grid-gap * 2;
+    align-content: center;
+    padding-left: $padding-topbar * 2;
+
+    box-shadow: var(--border_top_panel);
+    background-color: var(--bg_desktop_top_panel);
+  }
+
+  &--justify-end {
+    @include start-at("xslg") {
+      width: 100%;
+      grid-template-columns: 1fr repeat(3, max-content);
+      justify-content: flex-end;
+      align-content: stretch;
+      padding-left: 15px * $rem;
+    }
+
+    @include start-at("lg") {
+      padding-left: 30px * $rem;
+    }
+
+    @include start-at("xl") {
+      grid-template-columns: 1fr repeat(3, auto);
+    }
+  }
+
+  &--justify-two {
+    @include start-at("xslg") {
+      grid-template-columns: 1fr repeat(2, max-content);
+    }
+
+    @include start-at("xl") {
+      grid-template-columns: 1fr repeat(2, auto);
+    }
+  }
+
+  &__id {
+    display: none;
+
+    @include start-at("xslg") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__id {
+    display: none;
+
+    @include start-at("xslg") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__balance {
+    position: relative;
+
+    height: 100%;
+    display: none;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 40px;
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
+
+    @include start-at("xslg") {
+      display: flex;
+      grid-column: 2 / span 1;
+    }
+
+    &:hover {
+      background-color: var(--bg_hover_topbar_login);
+    }
+
+    &::after {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      font-family: "Font Awesome 5 Pro";
+      font-size: 16px;
+
+      content: "\f107";
+    }
+  }
+
+  &__login {
+    position: relative;
+
+    display: none;
+    justify-self: flex-end;
+    height: 100%;
+    padding-right: 15px * $rem;
+    padding-left: 15px * $rem;
+    grid-column: 2 span;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    @include start-at("xslg") {
+      display: flex;
+    }
+
+    @include start-at("lg") {
+      padding-right: 30px * $rem;
+    }
+
+    &:hover {
+      @include start-at("xslg") {
+        background-color: var(--bg_hover_topbar_login);
+      }
+
+      & .user-data__arrow {
+        color: var(--bg_hover_topbar_arrow);
+      }
+    }
+
+    @include start-at("xslg") {
+      justify-self: flex-start;
+    }
+  }
+
+  &__token {
+    display: none;
+
+    @include start-at("xslg") {
+      display: block;
+
+      font-size: 12px;
+      word-break: break-all;
+      line-height: 1.1;
+    }
+
+    @include start-at("xl") {
+      font-size: 16px;
+    }
+  }
+
+  // Выпадающий список меню
+  &__profile-menu {
+    position: absolute;
+
+    top: 102%;
+    right: 15px;
+
+    width: 160px;
+
+    @include start-at("xslg") {
+      top: 108%;
+      right: 30px;
+    }
+  }
+
+  &__exit {
+    display: none;
+
+    @include start-at("xslg") {
+      display: block;
+    }
+  }
+}

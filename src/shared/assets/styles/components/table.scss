@@ -1,0 +1,229 @@
+.table-wrap {
+  position: relative;
+  background-color: #fff;
+  border-radius: $border-radius;
+  border: 1px solid #d7dde6;
+  min-width: 100%;
+
+  &__header {
+    padding: 16px;
+  }
+
+  &__main {
+    display: block;
+    width: 100%;
+
+    border-radius: $border-radius;
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &_no-scroll {
+    width: max-content;
+  }
+
+  &_no-scroll &__main {
+    overflow-x: inherit;
+  }
+
+  &__content {
+    display: block;
+    min-width: 100%;
+    background-color: #fff;
+    padding-bottom: 4px;
+    border-radius: $border-radius;
+
+    @include start-at("lg") {
+      padding-top: 4px;
+    }
+  }
+
+  &__footer {
+    padding: 10px 20px 20px;
+  }
+
+  &__pagination {
+    padding: 16px 0 4px;
+  }
+}
+
+.clear-table {
+  text-align: right;
+  margin-bottom: 12px;
+
+  &__text {
+    cursor: pointer;
+    color: #7a7987;
+  }
+}
+
+.ui-table {
+  position: relative;
+}
+
+.ui-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ui-table thead {
+  vertical-align: top;
+  border-bottom: 1px solid #eeeff2;
+  color: #7a7987;
+}
+
+// row
+
+.ui-table tbody tr {
+  border-bottom: 1px solid #eeeff2;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #f5f6f9;
+
+    & .table-expert {
+      background-color: transparent;
+    }
+
+    & .table-expert .favorite-button,
+    & .stock .favorite-button,
+    & .table-expert-recommendation__link,
+    & .table-insider-action__link-icon,
+    & .table-ruexpert-recommendation__link-icon {
+      visibility: visible;
+    }
+
+    & td:first-child::before {
+      z-index: -1;
+
+      background-color: #f5f6f9;
+    }
+  }
+}
+
+// cell
+
+.ui-table td {
+  padding: 16px 8px;
+
+  @include active-by("xl") {
+    padding: 12px 8px;
+  }
+
+  @include active-by("lg") {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.ui-table th {
+  padding: 8px;
+
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: left;
+  font-weight: normal;
+
+  @include active-by("xl") {
+    padding: 6px;
+
+    line-height: 17px;
+  }
+}
+
+.ui-table td:first-child,
+.ui-table th:first-child {
+  padding-left: 20px;
+}
+
+.ui-table td:last-child,
+.ui-table th:last-child {
+  padding-right: 20px;
+}
+
+// fix first col
+
+.ui-table table.table-fix-first-col {
+  position: relative;
+
+  thead th:first-child,
+  tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      box-shadow: 3px 0px 8px 0 rgba(5, 24, 54, 5%);
+    }
+  }
+}
+
+// sort
+
+.ui-table th span.sortable {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: none;
+    content: "";
+    top: 50%;
+    right: -12px;
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+  }
+
+  &::before {
+    margin-top: -9px;
+    border-bottom: 4px solid #d7dde6;
+  }
+
+  &::after {
+    border-top: 4px solid #d7dde6;
+  }
+
+  &:hover {
+    &::before {
+      border-bottom-color: #7a7987;
+    }
+
+    &::after {
+      border-top-color: #7a7987;
+    }
+  }
+
+  &.sorted-desc::before {
+    border-bottom-color: var(--cabinet-color__link-regular);
+  }
+
+  &.sorted-asc::after {
+    border-top-color: var(--cabinet-color__link-regular);
+  }
+}
+
+.ui-table th span.sortable {
+  &:hover,
+  &.sorted-desc,
+  &.sorted-asc {
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+}

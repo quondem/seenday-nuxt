@@ -1,0 +1,303 @@
+.select-lists {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    &.noactive {
+        position: relative;
+
+        color: #a8b2c0;
+
+        cursor: default;
+        pointer-events: none;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #cbd0dd;
+            opacity: 0.5;
+
+            content: '';
+        }
+
+    }
+
+    @include start-at("md") {
+        position: absolute;
+        top: 105%;
+        z-index: 5;
+
+        box-shadow:var(--shadow_select_lists);
+        margin: 0;
+    }
+
+    &[data-show="hide"] {
+        display: none;
+    }
+
+    &[data-show="show"] {
+        display: block;
+    }
+
+    &__item {
+        position: relative;
+
+        list-style: none;
+        
+        padding-top: 5px*$rem;
+        padding-right: 15px*$rem;
+        padding-bottom: 5px*$rem;
+        padding-left: 10px*$rem;
+
+        background-color: transparent;
+        white-space: nowrap; /* Отменяем перенос текста */
+        overflow-x: hidden; /* Обрезаем содержимое */
+
+        &:hover {
+            background-color: var(--hover_select_lists_item);
+        }
+
+        &.top-bar {
+            padding-right: 0;
+            overflow: visible;
+        }
+
+        a {
+            font-size: 14px*$tem;
+            white-space: nowrap;
+
+            color: inherit;
+
+            transition: all 0.3s ease;
+
+            cursor: pointer;
+        }
+
+        span {
+            font-size: 14px*$tem;
+        }
+
+        // активный пунт в выпадающем списке
+        &.active {
+            background-color: #048df6;
+            border-top-left-radius: 3px*$rem;
+            border-top-right-radius: 3px*$rem;
+            color: #ffffff;
+
+            a:hover {
+                background-color: var(--bg_active_select_lists_item);
+                color: var(--color_active_select_lists_item);
+
+                cursor: default;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        display: flex;
+        align-items: center;
+
+        font-size: 13px;
+    }
+}
+
+// Блок Фильтр в поске
+.select-filter {
+    position: relative;
+
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 35px*$rem;
+    display: flex;
+    align-items: center;
+    
+    cursor: pointer;
+
+    // box-shadow: var(--shadow_select_filter);
+    // border-width: 1px;
+    // border-radius: 0 3px 3px 0;
+    // border-color: var(--border_select_filter);
+
+    border: 1px solid #fff;
+    box-shadow: var(--box_shadow_block);
+
+    border-style: solid;
+    border-radius: 3px*$rem;
+    
+    background: #fff;
+
+    &.noactive {
+        position: relative;
+
+        color: #a8b2c0;
+
+        cursor: default;
+        pointer-events: none;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #cbd0dd;
+            opacity: 0.5;
+
+            content: '';
+        }
+
+    }
+
+    &[data-disabled="1"] {
+        color: #555;
+        background-color: #eee;
+    }
+
+    &.add-ps {
+        width: 203px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        width: 30px;
+
+        // background-image: var(--bg_after_select_filter);
+        // background-repeat: repeat-x;
+        // border-top-right-radius: 3px;
+        // border-bottom-right-radius: 3px;
+    }
+    
+   // Активное значение фильтра
+    &__active {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        font-size: 15px*$tem;
+        white-space: nowrap;
+        overflow-x: hidden;
+    }
+
+    // Расположение списка фильтра
+    &__lists {
+        position: absolute;
+        top: 110%;
+        left: -1px;
+        z-index: 10;
+
+        width: calc(100% + 2px);
+        margin: 0;
+        
+        // border: 1px solid var(--border_select_filter_lists);
+        // border: 1px solid #fff;
+        box-shadow: var(--box_shadow_block);
+
+        // border-top-right-radius: 0;
+        // border-top-left-radius: 0;
+    }
+
+    &__item {
+        position: relative;
+
+        height: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow-x: hidden; //прятать выходящий за пределы текст
+        padding-right: 15px;
+        padding-left: 15px;
+        white-space: nowrap; //запрет на перенос текста
+        
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background-image: var(--bg_after_select_filter_item);
+            background-repeat: repeat-x;
+
+            border-top-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+    }
+
+    &__icon {
+        position: absolute;
+        right: 9px*$rem;
+        top: 50%;
+        z-index: 3;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        transform: translateY(-50%);
+
+        &::before {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Pro';
+            font-size: 14px;
+
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+            // &::before {
+            //     position: absolute;
+            //     left: 7px*$rem;
+            //     top: 52%;
+
+            //     transform: translateY(-50%);
+
+            //     content: '\f107';
+            //     font-family: 'Font Awesome 5 Pro';
+
+            //     transition: all 0.3s ease;
+            //     opacity: 0;
+            // }
+
+//             // &:hover {                
+//             //     &::before {
+//             //         opacity: 1;        
+//             //     }
+//             // }
+
+//             & a {
+//                 font-weight: 600;
+//                 height: 100%;
+//                 width: 100%;
+//                 display: flex;
+//                 align-items: center;
+//             }
+//         }
+//     }
+
+
+
+    

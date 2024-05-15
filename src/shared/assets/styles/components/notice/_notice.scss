@@ -1,0 +1,120 @@
+.notice {
+  display: flex;
+  gap: 7.5px;
+  width: 100%;
+  padding: 7px * $rem 10px * $rem;
+  border-radius: $border-radius;
+  font-size: 14px * $rem;
+
+  &_inline {
+    width: fit-content;
+  }
+
+  &_extra-small {
+    font-size: 10px * $rem;
+  }
+
+  &_small {
+    font-size: 12px * $rem;
+  }
+
+  &_large {
+    padding: 10px * $rem 15px * $rem;
+    font-size: 15px * $rem;
+  }
+
+  &.no-pd {
+    padding: 0;
+  }
+  &[data-show="show"] {
+    display: block;
+  }
+  &[data-show="hide"] {
+    display: none;
+  }
+  &[notice-id^="error_"] {
+    margin-bottom: 10px * $rem;
+    width: 100%;
+    line-height: 1.1;
+    @include start-at("xslg") {
+      width: auto;
+    }
+  }
+  &_alb-ver[notice-id^="error_"] {
+    margin-bottom: 10px * $rem;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.1;
+  }
+  &[notice-id="add"] {
+    margin-bottom: 5px * $rem;
+  }
+  &[notice-id="alert-upload"] {
+    margin-bottom: 10px * $rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &[notice-id="error-users"] {
+    margin-bottom: 5px * $rem;
+  }
+  &[notice-id="error-album"] {
+    margin-bottom: 5px * $rem;
+  }
+  &[notice-id^="error_price_"] {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3px;
+  }
+  &[notice-id^="error_tooltip_"] {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  &[notice-id$="-error"] {
+    margin-bottom: 5px * $rem;
+  }
+  &[notice-id^="success-ps_"],
+  &[notice-id^="error-ps_"] {
+    margin-bottom: 10px * $rem;
+  }
+  &[notice-id="error_create-album"] {
+    margin: 0;
+  }
+
+  &_icon_right {
+    position: relative;
+    padding-right: 40px;
+
+    & .icon {
+      position: absolute;
+      top: 50%;
+      right: 8px;
+
+      transform: translateY(-50%);
+
+      &:hover {
+        color: inherit;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__text {
+    width: fit-content;
+  }
+
+  &_text-left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &_text-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  &_text-right {
+    justify-content: flex-end;
+    text-align: end;
+  }
+}

@@ -1,0 +1,68 @@
+.info-indicators {
+  padding: 12px 12px 0;
+
+  &__inner {
+    opacity: 0;
+    z-index: -1;
+
+    padding: 12px;
+    min-width: 180px;
+    max-width: 300px;
+
+    background: var(--bg_info_indicators);
+    border-radius: 16px;
+
+    transition: all 0.3s ease;
+
+    @include start-at("xl") {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__btn {
+    margin-top: 12px;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: auto;
+    width: 100%;
+
+    opacity: 1;
+
+    transition: all 0.3s ease;
+
+    @include start-at("xl") {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__icon-inner {
+    position: relative;
+
+    display: inline-flex;
+
+    color: var(--color_indicatos_icon);
+
+    & i {
+      font-size: 25px;
+    }
+  }
+
+  &__sign {
+    position: absolute;
+    top: -10px;
+    right: -8px;
+  }
+}

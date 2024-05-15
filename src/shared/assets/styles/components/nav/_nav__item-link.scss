@@ -1,0 +1,80 @@
+
+.nav {
+  &__item-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding: 15px*$rem 15px*$rem 15px*$rem 0;
+    border-radius: $border-radius-nav;
+
+    color: var(--color_nav_title);
+
+    transition: background-color 0.3s ease;
+
+    cursor: pointer;
+
+    & i {
+      font-size: 14px;
+    }
+
+    @include start-at("md") {
+      &:hover {
+        color: var(--color_nav_title);
+
+        background-color: var(--bg_hover_nav);
+
+        text-decoration: none;
+
+        & > .nav__toggle-sub .nav__arrow-link::before {
+          background-color: var(--background_hover_line_navbar);
+        }
+      }
+    }
+
+    & > .nav__toggle-sub .nav__arrow-link:hover {
+      background-color: var(--background_hover_toggle_navbar);
+    }
+
+    &.open {
+      & > .nav__toggle-sub .nav__arrow-link i {
+        transform: rotate(180deg);
+      }
+
+      background-color: var(--background_active_toggle_navbar);
+    }
+
+    @include start-at("xslg") {
+      height: $height-nav-item;
+      padding: 12px*$rem 0 12px*$rem 0;
+    }
+
+    &.active,
+    &.router-link-active {
+      background-color: var(--bg_nav_active);
+      cursor: default;
+
+      & > .nav__toggle-sub .nav__arrow-link:hover {
+        background-color: var(--background_active_toggle_navbar);
+      }
+
+      & > .nav__toggle-sub .nav__arrow-link::before {
+        background-color: var(--background_active_line_navbar);
+      }
+    }
+
+    &_sub {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 100%;
+
+      @include start-at("xslg") {
+        height: $height-nav-sub-link;
+      }
+
+      & .nav__icon i {
+        font-size: 14px*$tem;
+      }
+    }
+  }
+}

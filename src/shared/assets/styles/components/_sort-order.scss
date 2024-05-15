@@ -1,0 +1,438 @@
+wrapper-sort {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+
+    &.users,
+    &.orders {
+        grid-row: 1;
+    }
+
+    @include start-at("lg") {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+wrapper-sort-order {
+    // display: block;
+    display: none;
+    overflow-x: auto;
+}
+
+global-sort {
+    display: grid;
+    grid-gap: 15px*$rem;
+
+    &[data-fixed="fixed"] {
+        @include start-at("xslg") {
+            width: 50%;
+            min-width: auto;
+            margin: 0 auto;
+        }
+
+        @include start-at("lg") {
+            position: relative;   
+            width: 100%;
+            // width: 27.5%;
+         }
+
+         @include start-at("xl") {
+            position: fixed;   
+            width: 345px*$rem;
+        }
+    }
+
+    &.global-sort_users {
+        display: flex;
+        justify-content: flex-start
+    }
+}
+
+.sort-order {
+    padding: 15px*$rem;
+    display: inline-flex;
+    width: 100%; 
+    justify-content: left; 
+    flex-wrap: wrap;
+    gap: 3px*$rem;
+    // min-width: 380px;
+
+    &__title {
+        line-height: 1;
+    }
+
+    &.short {
+        // min-width: 330px;
+    }
+
+    @include start-at("xslg") {
+        width: 100%;
+        min-width: 100%;
+
+        &.short {
+            min-width: 100%;
+        }
+    }
+ 
+    @include start-at("lg") {
+        flex-direction: column;
+    }
+
+    @include start-at("xl") {
+        justify-content: left;
+        flex-direction: row;  
+        gap: 3px*$rem;  
+    }
+
+    &_users,
+    &_default {
+        padding: 0;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-bottom: 15px;
+        min-width: 100%;
+    }
+
+    &.flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    &__sub {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        padding: 0 10px*$rem;
+        // margin-right: 10px;      
+
+        font-size: 12px*$tem;
+
+        background-color: var(--bg_sort_sub);
+        border-radius: $border-radius;
+        color: var(--color_sort_sub);
+
+        cursor: pointer;
+        white-space: nowrap;
+
+        &.small {
+            font-size: 14px;
+        }
+
+        &.path {
+            flex: 1;
+            padding: 0;
+            margin-left: 0;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include start-at("xslg") {
+                flex: 0;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            @include start-at("xslg") {
+                // margin-bottom: 4px;
+                // margin-right: 4px;
+            }
+            // @include start-at("lg") {
+            //     width: 100%;
+            //     margin-top: 0;
+            // }
+            
+            // @include start-at("xl") {
+            //     margin-top: 4px;
+            //     width: 49.4%;
+            // }
+        }
+
+
+        &[data-active="active"] {
+            background-color: var(--bg_sort_order);
+            box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+        }
+
+        @include start-at("xslg") {
+            margin-right: 5px;
+            padding: 0 10px*$rem;
+        }
+
+        @include start-at("lg") {
+            justify-content: center;
+            margin-right: 0;
+            margin-bottom: 5px*$rem;  
+        }
+
+        @include start-at("xl") {
+            margin-bottom: 0;
+        }
+    
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        transition: 0.3s ease;
+
+        &:hover,
+        [data-active="active"] {
+            background-color: var(--bg_sort_order);
+            box-shadow: var(--box_shadow_sort_order);
+            color: #ffffff;
+        }
+        
+    }
+}
+//Сортировка по дате в ордере для менеджеров
+block-date {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px*$rem;
+
+    @include start-at("lg") {
+        padding: 20px*$rem 15px*$rem;
+    }
+
+    &.orders  span {
+        z-index: 4;
+
+        height: 34px;
+
+        border-bottom-width: 1px;
+        border-right-width: 1px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        transition: all 0.3s ease;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--bg_hover_block_date_orders);
+        }
+    }
+
+    & .input {
+        z-index: 3;
+
+        width: 100%;
+        font-size: 15px;
+        font-family: $font-family-base;
+
+        background-color: transparent;
+        box-shadow: 0px 0px 4px 5px rgba(0,0,0,0.01) inset;
+
+        &:hover + span {
+            background-color: #e7e6ff;
+        }
+    }
+
+    & span {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        z-index: -1;
+
+        transform:  translateY(-50%);
+
+        width: 35px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 0;
+        border-left-width: 1px;
+        border-color: #a3a6a6;
+        background-color: #ebebeb;
+        border-style: solid;
+        cursor: pointer;
+
+        font-size: 15px*$rem;
+
+        color: var(--color_primary);
+
+        transition: all 0.3s ease;
+    }
+
+    & label {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px*$rem;
+    }
+}
+
+// Обертка для сортировки в ордере менеджеров
+wrapper-sort-fields {
+    padding: 15px*$rem 15px*$rem 0 15px*$rem;
+
+    @include start-at("lg") {
+        padding: 15px*$rem 15px*$rem 0 15px*$rem;
+    }
+
+    &.users {
+        position: relative;
+        padding: 0;
+    }
+}
+
+// Блок с номером заказа и иконки, поиск, фильтр
+.sort-fields {
+    display: flex;
+    justify-content: space-between;
+
+    &__btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    &__textfield {
+        position: relative;
+
+        &_order {
+            width: calc(100% - 85px);
+        }
+
+        &_user {
+            width: calc(100% - 168px);
+        }
+
+        & input {
+            width: 100%;
+            font-size: 15px;
+            font-family: $font-family-base;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        & span {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+
+            padding-top: 2px;
+            padding-bottom: 2px;
+            width: 90%;
+
+            font-size: 12px;
+            text-align: center;
+            color: #ffffff;
+
+            transform: translateX(-50%);
+
+            background: var(--color_primary);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    }
+
+}
+
+// Кнопки сортировки в ордере заказов 
+.sort-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 7.5px*$rem;
+
+    &__type {
+        padding-top: 5px*$rem;
+        padding-bottom: 5px*$rem;
+        width: 100%;
+
+        font-size: 12px*$rem;
+        text-align: center;
+
+        background-color: var(--bg_sort_sub);
+        border-radius: 3px*$rem;
+
+        margin-bottom: 1px*$rem;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--color_secondary);
+            box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3) inset;
+            color: #ffffff;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &_abs {
+        position: absolute;
+        top: 95%;
+        left: 0;
+        background-color: #fff;
+        width: 150px;
+        box-shadow: 0 3px 10px 0 rgba(0,0,0, 0.2);
+        padding: 5px;
+        border-radius: 3px;
+        z-index: 1;
+    }
+}
+
+// Обертка для полей сортировки
+wrapper-sort-fields {
+    display: block;
+}
+
+// блок выбрать год
+.search-orders {
+    display: grid;
+    grid-gap: 5px*$rem;
+    padding: 15px*$rem;
+
+    &__btn {
+        margin-top: 10px*$rem;
+        margin-bottom: 5px*$rem;
+    }
+
+    & .button {
+        width: 48%;
+    }
+
+    &_ps {
+        & .select-filter {
+            @include start-at("xl") {
+                width: 203px;
+            }
+        }
+
+        & .button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+    p {
+        font-size: 11px*$tem;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
+
+
+// Сортировка для пользователей
+.sort-users {
+    padding-top: 20px;
+    width: 100%;
+
+    @include start-at("xslg") {
+        width: auto;
+    }
+}

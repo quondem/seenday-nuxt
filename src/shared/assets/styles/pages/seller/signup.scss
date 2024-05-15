@@ -1,0 +1,298 @@
+.contract {
+  max-width: 1400px;
+  width: 100%;
+  grid-column: 1 / span 2;
+
+  & .link {
+    display: inline-flex;
+  }
+
+  //@include start-at("lg") {
+  //  padding-left: 8px;
+  //}
+
+  &__inner {
+    padding-top: 32px * $rem;
+
+    @include start-at("md") {
+      padding-top: 16px * $rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-family: $font-family-medium;
+
+    @include start-at("xslg") {
+      font-size: 25px;
+    }
+  }
+
+  &__items {
+    margin-top: 32px;
+
+    @include start-at("lg") {
+      display: flex;
+    }
+  }
+
+  &__items-inner {
+    width: 100%;
+
+    @include start-at("lg") {
+      padding-right: 24px;
+      max-width: 1000px;
+
+      border-right: 1px solid var(--border_color_light);
+    }
+
+    & .connect-seller-step .contract-item {
+      margin-bottom: 20px;
+    }
+
+    & .connect-seller-step:last-child .contract-item {
+      margin-bottom: 0;
+    }
+  }
+
+  &__items-control {
+    margin-top: 34px;
+
+    @include start-at("lg") {
+      padding-left: 24px;
+      margin-top: 0;
+      max-width: 304px;
+      width: 100%;
+    }
+  }
+
+  &__items-control-inner {
+    @include start-at("xslg") {
+      position: sticky;
+      top: calc(10px + $heightTop);
+    }
+  }
+}
+
+.contract-item {
+  flex-grow: 1;
+  box-sizing: border-box;
+
+  background: #fff;
+  padding: 15px;
+  border-radius: 0.1875rem;
+  box-shadow: var(--box_shadow_block);
+
+  @include start-at("xslg") {
+    padding: 30px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-family: $font-family-medium;
+    font-size: 18px;
+  }
+
+  &__form {
+    margin-top: 20px;
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+}
+
+.contract-item-form {
+  display: grid;
+  grid-gap: 16px;
+
+  &__item-inner {
+    display: grid;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+
+    @include start-at("md") {
+      grid-column-gap: 20px;
+    }
+
+    @include start-at("md") {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &_auto {
+      @include start-at("sm") {
+        grid-template-columns: auto 1fr;
+
+        & .select-filter {
+          padding-right: 30px;
+        }
+      }
+    }
+
+    &_grid-2 {
+      @include start-at("md") {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__item-big-small {
+    display: grid;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+
+    @include start-at("md") {
+      grid-column-gap: 20px;
+    }
+
+    @include start-at("md") {
+      grid-template-columns: 1fr minmax(80px, 100px);
+      grid-column: 1 / 3 span;
+    }
+
+    &_auto {
+      @include start-at("sm") {
+        grid-template-columns: auto 1fr;
+
+        & .select-filter {
+          padding-right: 30px;
+        }
+      }
+    }
+
+    &_grid-2 {
+      @include start-at("md") {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__item {
+    min-width: 0;
+
+    &_mt40 {
+      margin-top: 20px;
+    }
+
+    &_full {
+      @include start-at("md") {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &_grid-1-1 {
+      @include start-at("md") {
+        grid-column: 1 / span 1;
+      }
+    }
+
+    &_grid-2-2 {
+      @include start-at("md") {
+        grid-column: 2 / span 1;
+      }
+    }
+
+    &_grid-2-3 {
+      @include start-at("md") {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &_grid-1-2 {
+      @include start-at("md") {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &_grid-3-3 {
+      @include start-at("md") {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+
+  &__label {
+    margin-bottom: 6px;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__checkbox {
+    cursor: pointer;
+    display: flex;
+
+    & .checkbox {
+      margin-right: 10px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  &__item-upload-data {
+    border-radius: $border-radius;
+    border: 1px solid var(--border_color);
+    padding: 6px 10px;
+    width: 100%;
+    background-color: var(--bg-blocks);
+    font-size: 14px * $tem;
+
+    grid-column: 1 / span 3;
+
+    &_line {
+      display: inline-flex;
+      width: 100%;
+    }
+    &_name {
+      width: 150px;
+    }
+
+    &_mt40 {
+      margin-top: 20px;
+    }
+
+    &_full {
+      @include start-at("md") {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &_grid-1-1 {
+      @include start-at("md") {
+        grid-column: 1 / span 1;
+      }
+    }
+
+    &_grid-2-2 {
+      @include start-at("md") {
+        grid-column: 2 / span 1;
+      }
+    }
+
+    &_grid-2-3 {
+      @include start-at("md") {
+        grid-column: 2 / span 3;
+      }
+    }
+
+    &_grid-1-2 {
+      @include start-at("md") {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &_grid-3-3 {
+      @include start-at("md") {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+}

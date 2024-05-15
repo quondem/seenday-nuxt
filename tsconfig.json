@@ -1,0 +1,11 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": ["@pinia/nuxt", "@nuxt/types", "@vueuse/nuxt"],
+    "lib": ["dom", "dom.iterable"],
+    "allowSyntheticDefaultImports": true
+  },
+  "build": {
+    "transpile": ["@nuxt/kit"]
+  }
+}

@@ -1,0 +1,25 @@
+.logo {
+    &__link {
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &__text {
+        width: $widthLogo;
+        text-align: center;
+    }
+
+    &__img {
+        width: $widthLogo;
+        height: auto;
+    }
+}
+

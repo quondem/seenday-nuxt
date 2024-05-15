@@ -1,0 +1,38 @@
+.tippy-box[data-theme~="purple"] {
+  background-color: var(--bg_hover_nav);
+  color: #fff;
+}
+
+.tippy-box[data-theme~="black"] {
+  background-color: #343360;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: $font-base;
+
+  & .tippy-arrow {
+    background-color: #343360;
+    color: #343360;
+  }
+}
+
+.tippy-box[data-theme~="grey"] {
+  padding: 10px 32px 14px 14px;
+
+  text-align: left;
+
+  border-radius: 0;
+  background: #e9f0f9;
+  color: var(--color_text);
+
+  & .tippy-arrow {
+    width: 14px;
+    height: 14px;
+
+    color: #e9f0f9;
+  }
+
+  & .tippy-content {
+    padding: 0;
+  }
+}

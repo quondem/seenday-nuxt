@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    local("Font Awesome 6 Pro"),
+    local("Font Awesome 6 Pro"),
+    url("fa-light-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Font Awesome 5 Pro"),
+    local("Font Awesome 5 Pro"),
+    url("fa-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Font Awesome 6 Brands"),
+    local("Font Awesome 6 Brands"),
+    url("fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    local("Font Awesome 6 Pro"),
+    local("Font Awesome 6 Pro"),
+    url("fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Duotone';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    local("Font Awesome 6 Pro"),
+    local("Font Awesome 6 Pro"),
+    url("fa-duotone.woff2") format("woff2");
+}
+

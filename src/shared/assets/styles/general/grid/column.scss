@@ -1,0 +1,34 @@
+/*
+  Генератор перечисляемых классов:
+     f("foo", 5) -> .foo-1, .foo-2, ... , .foo-5
+*/
+@function combineNumberedClass($className, $num: $grid-columns) {
+  $result: "";
+
+  @for $i from 1 through $num {
+    $result: $result + "." + $className + "-" + $i + ", ";
+  }
+
+  @return $result;
+}
+
+@mixin make-column($breakpoint-name) {
+  // Схлопывание: .col-xs-{n} -> .col-{n}
+  $postfix: if($breakpoint-name == "xs", "", "-#{$breakpoint-name}");
+
+  // Общие стили для ячейки
+  #{combineNumberedClass(#{"col#{$postfix}"})} {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: $grid-half-gutter-width;
+    padding-left: $grid-half-gutter-width;
+  }
+
+  // Размеры
+  @for $i from 1 through $grid-columns {
+    .col#{$postfix}-#{$i} {
+      flex-basis: percentage(calc($i / $grid-columns));
+      max-width: percentage(calc($i / $grid-columns));
+    }
+  }
+}

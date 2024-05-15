@@ -1,0 +1,12 @@
+.hint {
+  display: flex;
+  color: var(--color_text);
+
+  &_small &__icon {
+    font-size: 16px;
+  }
+
+  &_medium &__icon {
+    font-size: 20px;
+  }
+}

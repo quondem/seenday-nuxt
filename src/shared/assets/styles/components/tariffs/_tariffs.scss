@@ -1,0 +1,35 @@
+.tariffs {
+    &__inner {
+        padding-top: 16px*$rem;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+
+        font-size: 20px;
+        font-family: $font-family-medium;
+
+        @include start-at("xslg") {
+            font-size: 25px;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-gap: $grid-gap;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+    }
+
+    &__other {
+        @include start-at("md") {
+            grid-column: 1 / span 2;
+        }
+    }
+}
+
+@import "card";

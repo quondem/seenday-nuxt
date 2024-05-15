@@ -1,0 +1,18 @@
+$grid-columns: 12; // Количество колонок
+
+$grid-gutter-width: 15px; // Отступ между ячейками
+$grid-outer-margin: 12px; // Отступ от краев экрана (слева и справа)
+
+$grid-half-gutter-width: calc($grid-gutter-width / 2);
+$grid-gutter-compensation: $grid-half-gutter-width * -1;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 375px,
+    md: 578px,
+    xslg: 769px,
+    lg: 992px,
+    xl: 1200px,
+    xl2: 1440px,
+    xxl: 1600px
+);

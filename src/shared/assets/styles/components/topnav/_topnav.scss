@@ -1,0 +1,15 @@
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color:  var(--bg_top_panel);
+
+    @include start-at("xslg") {
+        width: $widthNavbar;
+        justify-content: flex-start;
+    }
+}
+
+
+@import "topnav__logo"; //Разположение логотипа в topnav

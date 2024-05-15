@@ -1,0 +1,104 @@
+.balance-replenishment {
+  padding-top: 10px;
+
+  @include start-at("xslg") {
+    padding: 0;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+  }
+
+  &__item {
+    margin-bottom: 20px*$rem;
+  }
+
+  &__label {
+    margin-bottom: 8px*$rem;
+  }
+
+  &__check {
+    display: flex;
+    margin-top: 10px;
+
+    & .checkbox {
+      cursor: pointer;
+    }
+
+     span {
+       display: block;
+
+       font-size: 14px;
+       opacity: 0.7;
+     }
+  }
+
+  &__check-label {
+    margin-left: 10px;
+
+    cursor: pointer;
+
+    span {
+      display: block;
+
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.7;
+  }
+
+  &__textfield {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  &__notice {
+    margin-bottom: 16px*$rem;
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: column;
+
+    @include start-at("md") {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    & .button {
+      width: 100%;
+      margin-top: 10px;
+      height: 35px;
+
+      @include start-at("md") {
+        width: auto;
+        margin-left: 10px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px*$rem;
+
+    border-top: 1px solid var(--border_color_light);
+
+    & > .button:first-child {
+      margin-right: 10px;
+    }
+  }
+}

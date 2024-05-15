@@ -1,0 +1,40 @@
+.scroll-area {
+  &__viewport {
+    height: 100%;
+  }
+
+  &__scrollbar {
+    width: 10px;
+    touch-action: none;
+    user-select: none;
+
+    cursor: pointer;
+  }
+
+  &__thumb {
+    pointer-events: auto;
+    user-select: none;
+
+    opacity: 0.2;
+    background-color: var(--color_blue_gray);
+    transition-property: background-color, width, height, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    background-clip: content-box;
+
+    /* increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
+}

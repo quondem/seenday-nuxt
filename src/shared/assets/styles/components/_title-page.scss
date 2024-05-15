@@ -1,0 +1,29 @@
+.title-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px * $rem 8px * $rem;
+
+  font-size: 17px * $rem;
+  font-weight: $font-family-medium;
+  line-height: 1.1;
+  text-align: center;
+
+  background-color: var(--bg_title_page);
+  border-radius: $border-radius;
+  color: snow;
+
+  &_no-radius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  @include start-at("md") {
+    line-height: normal;
+  }
+
+  &[data-color="blue"] {
+    background-color: var(--bg_btn_blue);
+  }
+}

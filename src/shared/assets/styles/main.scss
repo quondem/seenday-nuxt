@@ -1,0 +1,27 @@
+@import "general/fonts";
+
+// Темы
+@import "general/themes/default";
+@import "general/themes/light";
+
+@import "general/base";
+@import "general/color";
+@import "general/grid/index";
+@import "general/icons";
+
+@import "typography";
+@import "spacing";
+@import "text-decoration";
+@import "helpers";
+@import "nobr";
+
+@import "components/main/main";
+@import "components/button/button"; //основные стили для кнопки
+@import "components/button/button-icon"; //основные стили для кнопки-иконки
+@import "components/button/data-color"; //цвета кнопки
+@import "components/button/data-size"; //размеры кнопки
+@import "components/block"; //Общие стили для блоков, обводка, радиус
+@import "components/cabinet/links";
+@import "components/a/a-color";
+
+@import "@vuepic/vue-datepicker/dist/main.css";

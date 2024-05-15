@@ -1,0 +1,56 @@
+.partner-list-sellers {
+   min-height: 96px;
+   display: flex;
+
+   @include start-at("xslg") {
+    min-height: 118px;
+   }
+}
+
+.partner-statistics {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-gap: 16px;
+
+    overflow-y: auto;
+
+    @include start-at("xslg") {
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+
+        background: #fff;
+        border-radius: 24px;
+
+
+        @include start-at("xslg") {
+            padding: 24px;
+        }
+    }
+    
+    &__title {
+        margin-bottom: 6px;
+
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0.6;
+    }
+
+
+    &__value {
+        position: relative;
+        
+        flex-grow: 1;
+
+        font-size: 40px;
+        line-height: 1;
+
+        @include start-at("xslg") {
+            font-size: 45px; 
+        }
+    }
+}

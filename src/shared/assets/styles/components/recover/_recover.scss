@@ -1,0 +1,25 @@
+.recover {
+    font-size: 14px*$rem;
+    font-family: $font-family-bold;
+
+    color: var(--color_recover);
+
+    &__line {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+    
+            height: 1px;
+            width: 100%;
+            
+            border-bottom: 1px dashed var(--border_line_recover);
+    
+            content: '';
+
+            transition: opacity 0.3s ease;
+        }
+    }
+}

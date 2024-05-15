@@ -1,0 +1,36 @@
+.subs {
+    position: absolute;
+    top: 0;
+    left: 0;
+   
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    transition: opacity 0.3s ease;
+
+    @include start-at("xl") {
+        pointer-events: inherit;
+        
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+
+    &.show-finame {
+        @include start-at("xl") {
+            opacity: 1;
+        }
+
+        & .subs__to > div  {
+            display: block;
+        }
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}

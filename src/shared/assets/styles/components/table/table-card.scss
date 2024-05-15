@@ -1,0 +1,81 @@
+.table-card-list {
+  .table-card-wrap {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.table-card-horizontal-list {
+  display: flex;
+  overflow: auto hidden;
+
+  @include active-by("sm") {
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+
+  .table-card-wrap {
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include active-by("sm") {
+      max-width: 336px;
+
+      &:first-child {
+        padding-left: 12px;
+      }
+
+      &:last-child {
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+.table-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  // border: 1px solid var(--border_block);
+  border-radius: 16px;
+
+  &__section {
+    padding: 16px;
+    border-bottom: 1px solid #eeeff2;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &_small {
+      padding: 8px 16px;
+    }
+  }
+
+  &__parts {
+    display: flex;
+  }
+
+  &__part {
+    margin-right: 16px;
+    overflow: hidden;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & > div:last-child {
+      margin-top: 5px;
+    }
+
+    &_grow {
+      flex: 1;
+    }
+  }
+}

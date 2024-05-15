@@ -1,0 +1,245 @@
+sedit-row {
+    position: relative;
+
+    padding: 20px 15px;
+
+    &::before {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        
+        transform: translateX(-50%);
+
+        width: 95%;
+        height: 1px;
+
+        background-color: var(--bg_before_sedit_row);
+
+        content: '';
+
+    }
+}
+
+.settings-editor {
+    grid-gap: 0;
+    margin: 0;
+}
+
+sedit-info {
+    display: grid;
+    grid-row-gap: 5px*$rem;
+
+    & .sedit-info__text {
+        font-size: 16px;
+    }
+}
+
+// Строки редактора профиля
+sedit-info-row {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto max-content;
+    align-items: center;
+    grid-row-gap: 2px*$rem;
+    grid-column-gap: 15px*$rem;
+
+    cursor: pointer;
+
+    @include start-at("xslg"){
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    &:hover {
+        .sedit-control {
+            text-decoration: underline;
+        }
+    }
+
+    & .sedit-control {
+        font-size: 14px*$tem;
+
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        @include start-at("lg") {
+            display: block;
+            position: static;
+
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+
+        content: '\f107';
+        font-size: 18px;
+        font-family: 'Font Awesome 5 Pro';
+
+        opacity: 0.6;
+
+        @include start-at("lg") {
+            display: none;
+        }
+
+        transition: rotate 0.3s ease;
+    }
+
+    &.login::after {
+        display: none;
+    }
+
+    &[data-select="1"]::after {
+        transform: translateY(-50%) rotate(0deg);
+    }
+}
+
+wrapper-sedit-chang {
+    margin-top: 10px;
+}
+
+sedit-chang {
+    display: grid;
+    grid-row-gap: 15px*$rem;
+    grid-column-gap: 15px*$rem;
+    margin-top: 10px*$rem;
+
+    @include start-at("lg") {
+        margin-top: 0;
+    }
+
+    &.d_n {
+        display: none;
+    }
+    
+    & .sedit-chang__btn {
+        @include start-at("md") {
+            justify-self: center;
+        }
+
+        & .button {
+            height: 40px;
+            width: 100%;
+
+            @include start-at("md") {
+                width: auto;
+            }
+        }
+    }
+}
+
+
+sedit-chang-row {
+    display: grid;
+    align-items: center;
+    grid-row-gap: 5px*$rem;
+
+    @include start-at("lg"){
+        grid-template-columns: 150px 1fr min-content;
+        grid-template-rows: auto;
+        grid-gap: 15px*$rem;
+        padding: 0;
+    }
+
+    @include start-at("xl2") {
+        display: flex;
+        align-items: center;
+    }
+    
+    & .input {
+        height: 35px;
+        width: 100%;
+        padding-left: 10px*$rem;
+        padding-right: 10px*$rem;
+
+        text-align: left;
+        color: var(--color_sedit_chang_row_input);
+
+        border: 1px solid var(--border_sedit_chang_row_input);
+
+        @include start-at("lg"){
+            width: 200px;
+        }
+    }
+
+    & .sedit-control {
+        font-size: 14px*$tem;
+
+        cursor: pointer;
+
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+
+        @include start-at("lg") {
+            display: block;
+            position: static;
+
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+
+}
+
+.sedit-info {
+    &__label {
+        @include start-at("xslg") {
+            margin-right: 50px;
+        }
+    }
+
+    &__text {
+        &.hidden {
+            display: none;
+
+            // @include start-at("xslg") {
+            //     display: block;
+            // }
+        }
+        @include start-at("xslg") {
+            &.left-auto {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+
+.sedit-control {
+    @include start-at("lg") {
+        &.left-auto {
+            margin-left: auto;
+        }
+    }
+}
+
+
+.sedit-chang {
+    &__label {
+        @include start-at("xl2") {
+            width: 40%;
+            line-height: 1;
+            margin-right: 20px;
+        }
+    }
+
+    &__input {
+        @include start-at("xl2") {
+            width: 40%;
+        }
+    }
+}

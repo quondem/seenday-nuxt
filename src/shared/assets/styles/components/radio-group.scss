@@ -1,0 +1,23 @@
+.radio-group {
+  &__item {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg_checkbox);
+    box-shadow: var(--box_shadow_block);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &[data-state="checked"] {
+      background-color: var(--color_check_checkbox);
+    }
+  }
+
+  &__indicator {
+    color: white;
+  }
+}

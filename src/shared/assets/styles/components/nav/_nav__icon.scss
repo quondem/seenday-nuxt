@@ -1,0 +1,23 @@
+
+.nav {
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $width-nav-icon;
+        height: 100%;
+
+        i {
+            font-size: 18px*$tem;
+            font-weight: 400;
+
+            color: var(--color_nav_icon);
+
+            transition: all 0.3s ease;
+
+            @include start-at("xslg") {
+                font-size: 18px*$tem;
+            }
+        }
+    }
+}

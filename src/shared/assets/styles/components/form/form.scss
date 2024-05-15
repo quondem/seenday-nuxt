@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+
+    &_with-divider {
+      padding-bottom: 24px;
+    }
+  }
+}

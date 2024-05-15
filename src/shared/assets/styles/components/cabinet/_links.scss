@@ -1,0 +1,23 @@
+a, .link {
+    transition: color 0.2s ease;
+    color: var(--cabinet-color__link-regular);
+
+    cursor: pointer;
+
+    &:hover {
+        color: var(--cabinet-color__link-hover);
+    }
+}
+
+.span-link {
+    cursor: pointer;
+    transition: border-bottom-color 0.2s ease;
+    border-bottom: dashed 1px var(--cabinet-color__span-link);
+    color: var(--cabinet-color__span-link);
+
+    &:hover {
+        border-color: transparent;
+        // border-bottom: dashed 1px var(--cabinet-color__span-link-hover);
+        color: var(--cabinet-color__span-link-hover);
+    }
+}

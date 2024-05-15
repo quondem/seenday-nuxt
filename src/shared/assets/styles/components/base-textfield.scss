@@ -1,0 +1,347 @@
+.input {
+  height: $heightInput;
+
+  text-align: center;
+  color: var(--color_text);
+
+  border: 1px solid transparent;
+  box-shadow: var(--box_shadow_block);
+
+  border-radius: $border-radius;
+  outline: none;
+
+  -webkit-text-size-adjust: none;
+
+  &[type="file"] {
+    width: 100%;
+    height: 32px;
+  }
+
+  &.short {
+    width: 40px;
+  }
+
+  &.text-left {
+    padding-left: 10px * $rem;
+    padding-right: 16px * $rem;
+    text-align: left;
+  }
+
+  &[data-color="black"] {
+    background-color: var(--bg_input_secondary);
+    border-color: var(--border_input_secondary);
+
+    transition: all 0.3s ease;
+
+    color: var(--color_input_secondary);
+
+    &:hover {
+      background-color: var(--bg_hover_input_secondary);
+    }
+
+    &:focus {
+      background-color: var(--bg_focus_input_secondary);
+    }
+  }
+
+  &:focus {
+    border: 1px solid;
+    border-color: var(--border_focus_input);
+  }
+}
+
+.base-textfield {
+  position: relative;
+  cursor: inherit;
+  color: var(--color_text);
+
+  display: flex;
+  align-items: center;
+
+  box-shadow: var(--box_shadow_block);
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+
+  background-color: var(--color_white);
+
+  outline: none;
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &.success {
+    & .base-textfield__check {
+      opacity: 1;
+    }
+  }
+
+  &.error:focus-within {
+    border: 1px solid;
+    border-color: var(--color_danger);
+    background-color: var(--color_white);
+  }
+
+  &.error {
+    background-color: rgba(224, 31, 25, 0.12);
+    box-shadow: none;
+  }
+
+  &_focused,
+  &:focus-within {
+    border: 1px solid;
+    border-color: var(--border_focus_input);
+    box-shadow: none;
+  }
+
+  &_readonly:focus-within,
+  &_readonly &_focused {
+    border: 1px solid transparent;
+    box-shadow: var(--box_shadow_block);
+  }
+
+  &.fill,
+  &_focused,
+  &:focus-within {
+    & .base-textfield__label {
+      opacity: 1;
+      transform: translateY(-10px);
+      font-size: 12px;
+    }
+
+    &.base-textfield_with-label .base-textfield__input::placeholder {
+      opacity: 0.6;
+    }
+  }
+
+  &.fill.base-textfield_small,
+  &_focused.base-textfield_small,
+  &:focus-within.base-textfield_small {
+    & .base-textfield__label {
+      transform: translateY(-8px);
+      font-size: 11px;
+    }
+  }
+
+  &_disabled {
+    background: #f3f3f3;
+    color: #a8b2c0;
+    opacity: 1 !important;
+
+    cursor: default;
+  }
+
+  &_fill {
+    height: 100%;
+    padding: 4px 10px;
+  }
+
+  &_readonly {
+    cursor: default;
+  }
+
+  &_solid {
+    background-color: var(--background_input_solid);
+    color: var(--color_input_solid);
+    box-shadow: none;
+  }
+
+  &_disabled.base-textfield_solid {
+    background-color: var(--background_input_solid_disabled);
+    color: var(--color_input_solid_disabled);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: space-between;
+    height: 100%;
+    min-width: 0;
+    flex: 1;
+
+    position: relative;
+  }
+
+  &_small &__content {
+    height: 32px;
+    margin: 3px 12px;
+  }
+
+  &_medium &__content {
+    height: 32px;
+    margin: 6px 12px;
+  }
+
+  &_large &__content {
+    height: 42px;
+    margin: 6px 12px;
+  }
+
+  &_extra-small &__content {
+    height: 18px;
+  }
+
+  &__inner {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__input-container {
+    position: relative;
+    height: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    color: rgba(0, 0, 0, 0.8);
+
+    font-size: 14px;
+    font-family: $font-base;
+    line-height: 15.4px;
+    text-indent: 0;
+    line-height: 1.1;
+  }
+
+  &_disabled.base-textfield_solid &__input-container {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__check {
+    font-size: 16px;
+    color: var(--color_success);
+    opacity: 0;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: fit-content;
+    margin: auto 0;
+
+    font-family: $font-family-base;
+
+    display: block;
+
+    transform: translateY(0);
+
+    letter-spacing: normal;
+    font-size: 15px;
+    opacity: 0.6;
+
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    transform-origin: 0 0;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    will-change: color;
+
+    width: 100%;
+
+    @include start-at(lg) {
+      font-size: 16px;
+    }
+  }
+
+  &__pseudocontent {
+    pointer-events: none;
+    color: transparent;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+
+    border: 1px solid transparent;
+
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    font-family: inherit;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    cursor: inherit;
+    overflow: hidden;
+    color: inherit;
+
+    box-shadow: none;
+    background-color: transparent;
+
+    text-align: left;
+    text-overflow: ellipsis;
+
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    font-family: inherit;
+
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &[type="number"],
+    &[type="number"]:hover,
+    &[type="number"]:focus {
+      appearance: none;
+      -moz-appearance: textfield;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &_width-by-content &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &_with-label &__input {
+    padding-top: 14px;
+
+    &::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 15px;
+      color: var(--color_text);
+    }
+  }
+
+  &__right-section {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    color: inherit;
+
+    font-size: 20px;
+
+    height: 100%;
+  }
+
+  &__left-section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: 20px;
+  }
+
+  &__hint {
+    color: inherit;
+  }
+}

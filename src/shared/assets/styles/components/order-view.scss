@@ -1,0 +1,64 @@
+.order-view {
+    display: grid;
+    grid-row-gap: $grid-gap;
+    order: 3;
+    grid-column: col1-start / span 2;
+    align-self: flex-start;
+
+    @include start-at("xslg") {
+        justify-self: center;
+        width: 60%;
+    }
+
+    @include start-at("lg") {
+        width: 100%;
+        order: 2;
+        grid-column: col1-start / span 1;
+        grid-row: row2-start / span 1;
+    }
+
+    &.reverse {
+        @include start-at("lg") {    
+            grid-column: col2-start / span 1;
+        
+        }
+    }
+
+    &.no-back {
+        grid-row: row1-start / span 1;
+    }
+
+    & notice {
+        & a {
+            display: inline-flex;
+        }
+    }
+}
+
+.order-view {
+    &.reverse {
+        @include start-at("lg") {
+            height: 100%;
+            align-content: flex-start;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-row-gap: $grid-gap;
+
+        @include start-at("lg") {
+            position: sticky;
+            top: calc($heightTop + $grid-gap);
+        }
+    }
+}
+
+.order-view--two-col {
+    order: 2;
+
+    @include start-at("lg") { 
+        grid-row: row1-start / span 1;
+        order: 1;
+    }
+}

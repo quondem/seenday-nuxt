@@ -1,0 +1,500 @@
+// блок виджет-график
+.widget-chart {
+
+	&__date {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		@include start-at("md") {
+			margin-left: auto;
+			margin-bottom: 0;
+		}
+
+		@include start-at("lg") {
+			margin-left: 30px;
+		}
+
+
+		& block-date {
+			width: 70%;
+			padding: 0;
+
+			background-color: var(--bg_widget_chart_block_date);
+
+			@include start-at("md") {
+				width: 220px;
+			}
+
+			& input {
+				padding-left: 10px;
+				border: none;
+
+				text-align: left;
+
+				@include start-at("md") {
+					padding-left: 15px;
+				}
+
+			}
+
+			& span {
+				right: 0;
+				top: 0;
+
+				height: 100%;
+
+
+				border-left-color: var(--border_widget_chart_block_date);
+				border-bottom-right-radius: 3px;
+				border-top-right-radius: 3px;
+				background-color: #fff;
+
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		flex-direction: column-reverse;
+	
+
+		@include start-at("md") {
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		@include start-at("lg") {
+			justify-content: flex-start;
+		}
+	}
+
+	&__btn-wrapper {
+		margin-left: 10px;
+	}
+
+	&__btn {
+		height: 35px;
+	}
+}
+
+
+.chart-block {
+	position: relative;
+	z-index: 0; 
+
+	margin-top: 10px;
+	margin-left:  auto; 
+	margin-right: auto;
+
+	background-color: var(--bg_chart_block);
+
+	@include start-at("md") {
+		margin-top: 20px; 
+	}
+
+	@include start-at("lg") {
+		margin-top: 30px; 
+	} 
+
+	&__title {
+		font-family: $font-medium;
+		font-size: 16px*$tem;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+
+	&__period {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__body {
+		position: relative;
+		z-index: 2;
+		
+		padding: 10px 10px 15px 10px;		
+
+		@include start-at("xl") {
+			padding: 30px 30px;
+		}
+	}
+
+	&__description {
+		padding: 20px 30px 30px 30px;
+	}
+
+	&__highcharts {
+		width: 100%;
+
+		background-color: transparent;
+
+		font-size: 12px; 
+	}
+}
+
+.chart-general {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	overflow-x: auto;
+
+	&__info {
+		display: flex;
+		align-items: center;
+	}
+
+	&__period {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.chart-general-info {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 160px;
+	height: 95px;
+	padding: 16px;
+
+	border-right: 1px solid var(--border_chart_general_info);
+	border-bottom: 1px solid var(--border_chart_general_info);
+	color: var(--color_chart_general_info);
+
+	cursor: pointer;
+
+	transition: all 0.3s ease;
+	
+	&[data-color="purple"] {
+		background-color: var(--bg_btn_chart_info_purple);
+
+		&:hover {
+			background-color: var(--bg_btn_hover_chart_info_purple);
+		}
+
+		&:active {
+			background-color: var(--bg_btn_active_chart_info_purple);
+		}
+	}
+
+	&[data-color="green"] {
+
+		&[data-active="1"] {
+			background-color: var(--bg_btn_chart_info_success);
+
+			&:hover {
+				background-color: var(--bg_btn_hover_chart_info_success);
+			}
+
+			&:active {
+				background-color: var(--bg_btn_active_chart_info_success);
+			}
+		}
+
+		&[data-active="0"] {
+			border-bottom: 1px solid var(--border_btn_noactive_chart_info);
+		}
+	}
+
+	&[data-color="red"] {
+		&[data-active="1"] {
+			background-color: var(--bg_btn_chart_info_danger);
+			&:hover {
+				background-color: var(--bg_btn_hover_chart_info_danger);
+			}
+
+			&:active {
+				background-color: var(--bg_btn_active_chart_info_danger);
+			}
+		}
+
+		&[data-active="0"] {
+			border-right: 1px solid var(--border_btn_noactive_chart_info);
+			border-bottom: 1px solid var(--border_btn_noactive_chart_info);
+			border-left: 1px solid var(--border_btn_noactive_chart_info);
+		}
+	}
+
+
+	&[data-active="0"] {
+		background-color: transparent;
+		color: var(--color_btn_active_chart_info);
+
+		&:hover {
+			background-color: var(--bg_btn_active_chart_info);
+		}
+	}
+
+	@include start-at("lg") {
+		flex: 0 0 180px;
+		height: 100px;
+	}
+
+	&_color {
+		border: none;
+
+		&:first-child {
+			border-top-left-radius: $block-border-radius;
+		}
+	}
+
+	&__name {
+		margin-bottom: 10px;
+
+		font-family: $font-medium;
+		font-size: 15px;
+	}
+
+	&__value {
+		font-family: $font-medium;
+		font-size: 40px;
+		line-height: 1;
+	}
+}
+
+
+.highcharts {
+	// группа с графиками (линии, области графика, точки)
+	&__body {
+		transition: all 0.3s ease;
+
+		&.hide {
+			fill-opacity: 0.2;
+			stroke-opacity: 0.2;
+		}
+	}
+	
+	// Группа с легендой крафика по оси x/y
+	&__label {
+		font-size: 13px;
+		font-family: $font-light;
+
+    	fill: var(--color_other);
+	}
+}
+
+
+// Линии графика
+.highcharts-body-item {
+	transition: all 0.3s ease;
+
+	&__line {
+		position: relative;
+		z-index: 3;
+
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-width: 3px;
+	}
+}
+
+
+// Группа с сеткой графика
+.chart-grid {
+	&__item {
+		position: relative;
+		z-index: 1;
+
+		stroke: transparent;
+		stroke-width: 1px;
+
+		&_dashed {
+			stroke: var(--border_block);
+			stroke-width: 2;
+    		stroke-linecap: round;
+		    stroke-miterlimit: 10;
+		    stroke-dasharray: 0,6;
+		}
+	}
+}
+
+// Группа для деталей графика (точки, вертикальные линии)
+.highcharts-details {
+	&__item {
+    	transition: all 0.3s ease;
+
+		&.disabled {
+			fill-opacity: 0;
+    		stroke-opacity: 0;			
+		}
+		&.active {
+			fill-opacity: 1;
+    		stroke-opacity: 1;
+		}
+	}
+}
+
+
+// вертикальные линии на графике, соединяют точки и ось x
+.chart-line {
+	fill: none;
+    stroke: var(--border_block);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 0,6;
+
+    &_solid {
+    	stroke: var(--border_block);
+    	stroke-dasharray: 0,6;
+        stroke-width: 2px;
+    }
+}
+
+
+// Кнопки для выбора периода
+.chart-period-item {
+	padding: 8px 15px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+
+	cursor: pointer;
+	border-radius: 20px;
+
+	transition: all 0.3s ease;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		background-color: var(--color_secondary);
+		color: #fff;
+	}
+
+	&__title {
+		font-size: 13px*$tem;
+		font-family: $font-medium;
+		letter-spacing: 1px;
+	}
+
+	&[data-active="1"] {
+		background-color: var(--color_secondary);
+		color: #fff;
+
+		cursor: default;
+	}
+
+	&[disabled] {
+		opacity: 0.3;
+		cursor: default;
+
+		&:hover {
+			background-color: transparent;
+			color: inherit;
+		}
+	}
+}
+
+
+// Описание для графика
+.chart-description {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-right: 40px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__mark {
+		width: 15px;
+	    height: 15px;
+	    margin-right: 5px;
+
+	    border-radius: 3px;
+	}
+}
+
+// блок для наведения
+.hover-area {
+	fill: none;
+	cursor: pointer;
+    pointer-events: all;
+}
+
+// Наименование по оси их, сдвигаем к центру от точки
+.chart-label-x {
+	text-anchor: middle;
+
+	& text:first-child {
+		text-anchor: start;
+	}
+
+	& text:last-child {
+		text-anchor: end;
+	}
+}
+
+// Наименование по оси y, сдвигаем к центру от точки
+.chart-label-y {
+	text-anchor: middle;
+}
+
+// tooltip длля графика
+.chart-tooltip {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+
+    padding: 10px*$rem 15px*$rem;
+    max-width: 200px*$rem;
+    min-width: 140px;
+
+    background: #222;
+    color: #ffffff;
+    border-radius: 3px;
+
+    transition: all 0.3s ease;
+
+    &__marker {
+    	margin-right: 8px;
+    	width: 5px;
+    	height: 5px;
+
+    	border-radius: 3px*$rem;
+    }
+
+    &__period {
+    	margin-bottom: 8px*$rem;
+
+    	font-size: 13px;
+    	color: #fff;
+    	white-space: nowrap;
+
+    	opacity: 0.5;
+    }
+
+    &__point {
+    	display: flex;
+    	align-items: center;
+    	justify-content: flex-start;
+    	margin-bottom: 4px*$rem;
+
+    	font-size: 14px;
+
+    	&:last-child {
+			margin-bottom: 0;
+    	}
+    }
+
+    &__point-name {
+    	margin-right: 10px;
+    }
+}

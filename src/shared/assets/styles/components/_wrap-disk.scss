@@ -1,0 +1,28 @@
+wrap-disk {
+    display: block;
+}
+
+.disk {
+    padding: $grid-gap;
+
+    h2 {
+        margin-bottom: 5px*$rem;
+    }
+
+    &__text {
+        font-style: italic;
+
+        span {
+            font-family: $font-family-medium;
+        }
+    }
+
+    &__price,
+    &__many {
+
+        span {
+            color: var(--color_disk_price);
+            font-family: $font-family-medium;
+        }
+    }
+}
