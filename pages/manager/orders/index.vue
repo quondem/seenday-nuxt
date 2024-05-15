@@ -3,6 +3,9 @@
     <fixedLeftColumn>
       <template #fixed>
         <div class="block">
+          <Button class="back-button" color="gray" @click="routerBack">Назад</Button>
+        </div>
+        <div class="block">
           <InputDate
             v-model="inputDateValue"
             placeholder="Период"
@@ -87,6 +90,10 @@ type SortButton = {
   name: string;
   text?: string;
   icon?: string;
+};
+
+const routerBack = () => {
+  router.go(-1);
 };
 
 const router = useRouter();
@@ -367,5 +374,13 @@ const onClearYear = () => {
   top: 0;
   right: 0;
   background: white;
+}
+
+.back-button {
+  display: block;
+  width: 100%;
+  @include start-at(lg) {
+    display: none;
+  }
 }
 </style>
